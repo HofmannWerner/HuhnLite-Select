@@ -114,6 +114,13 @@ func loadSettings() error {
 	if execVal, ok := rawData["serverExec"].(string); ok && execVal != "" {
 		newSettings.ServerExec = execVal
 	}
+	
+	// Fallback für den Port, falls er in der JSON-Datei "port" statt "basePort" heißt
+	if newSettings.BasePort == 0 {
+		if portVal, ok := rawData["port"].(float64); ok {
+			newSettings.BasePort = int(portVal)
+		}
+	}
 
 	// Falls es eine fertige "mandanten" Liste im JSON gibt (z.B. aus der bisherigen Launcher-Struktur)
 	if len(newSettings.Mandanten) > 0 {
