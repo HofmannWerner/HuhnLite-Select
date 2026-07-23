@@ -1,0 +1,52 @@
+name: Build HuhnLite-Select
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch: # Erlaubt den manuellen Start über die GitHub-Oberfläche
+
+jobs:
+  build:
+    name: Build for ${{ matrix.goos }}/${{ matrix.goarch }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Hier definieren wir die gewünschten Betriebssysteme und Architekturen
+        include:
+          - goos: windows
+            goarch: amd64
+            ext: .exe
+          - goos: linux
+            goarch: amd64
+            ext: ""
+          - goos: darwin
+            goarch: amd64
+            ext: ""
+          - goos: darwin
+            goarch: arm64
+            ext: ""
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.22' # Go-Version anpassen, falls abweichend
+
+    - name: Build
+      env:
+        GOOS: ${{ matrix.goos }}
+        GOARCH: ${{ matrix.goarch }}
+        CGO_ENABLED: 0
+      run: |
+        go build -v -trimpath -ldflags="-s -w" -o HuhnLite-Select-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.ext }} main.go
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: HuhnLite-Select-${{ matrix.goos }}-${{ matrix.goarch }}
+        path: HuhnLite-Select-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.ext }}

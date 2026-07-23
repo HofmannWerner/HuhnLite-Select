@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HuhnLite - Mandantenauswahl</title>
+
+  <!-- Google Fonts & Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Quasar CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quasar@2.14.2/dist/quasar.prod.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="q-app">
+    <q-layout view="lHh Lpr lFf">
+      
+      <!-- Header -->
+      <q-header elevated class="bg-primary text-white q-py-xs">
+        <q-toolbar>
+          <q-avatar size="42px" class="q-mr-sm bg-white text-primary rounded-borders">
+            <q-icon name="egg" size="28px" color="primary" />
+          </q-avatar>
+          <q-toolbar-title class="text-weight-bold tracking-wide">
+            HuhnLite <span class="text-weight-light opacity-80">| {{ t('title').split('|')[1]?.trim() }}</span>
+          </q-toolbar-title>
+
+          <!-- Language Switcher -->
+          <q-btn flat dense class="q-mr-xs text-bold" style="padding: 2px 10px; min-height: 36px; border-radius: 8px;">
+            <span class="row items-center no-wrap">
+              <svg v-if="currentLanguage === 'de'" width="22" height="15" viewBox="0 0 5 3" style="border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000000"/></svg>
+              <svg v-else-if="currentLanguage === 'en'" width="22" height="15" viewBox="0 0 60 30" style="border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><clipPath id="uk-btn-s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="uk-btn-t"><path d="M30,15 m-30,0 h60 v15 h-60 z v-30 h60 v15 h-60 z"/></clipPath><g clip-path="url(#uk-btn-s)"><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#c8102e" stroke-width="4" clip-path="url(#uk-btn-t)"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6"/></g></svg>
+              <svg v-else-if="currentLanguage === 'it'" width="22" height="15" viewBox="0 0 3 2" style="border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+              <span class="text-uppercase" style="font-size: 0.85rem; margin-left: 6px;">{{ currentLanguage }}</span>
+              <q-icon name="arrow_drop_down" size="18px" />
+            </span>
+            <q-menu auto-close transition-show="jump-down" transition-hide="jump-up">
+              <q-list style="min-width: 140px">
+                <q-item clickable v-close-popup @click="setLanguage('de')" :active="currentLanguage === 'de'">
+                  <q-item-section avatar class="q-pr-none" style="min-width: auto; padding-right: 10px;">
+                    <svg width="22" height="15" viewBox="0 0 5 3" style="border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000000"/></svg>
+                  </q-item-section>
+                  <q-item-section class="text-weight-medium">Deutsch</q-item-section>
+                </q-item>
+                <q-item clickable v-close-popup @click="setLanguage('en')" :active="currentLanguage === 'en'">
+                  <q-item-section avatar class="q-pr-none" style="min-width: auto; padding-right: 10px;">
+                    <svg width="22" height="15" viewBox="0 0 60 30" style="border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><clipPath id="uk-item-s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="uk-item-t"><path d="M30,15 m-30,0 h60 v15 h-60 z v-30 h60 v15 h-60 z"/></clipPath><g clip-path="url(#uk-item-s)"><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#c8102e" stroke-width="4" clip-path="url(#uk-item-t)"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6"/></g></svg>
+                  </q-item-section>
+                  <q-item-section class="text-weight-medium">English</q-item-section>
+                </q-item>
+                <q-item clickable v-close-popup @click="setLanguage('it')" :active="currentLanguage === 'it'">
+                  <q-item-section avatar class="q-pr-none" style="min-width: auto; padding-right: 10px;">
+                    <svg width="22" height="15" viewBox="0 0 3 2" style="border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                  </q-item-section>
+                  <q-item-section class="text-weight-medium">Italiano</q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+          </q-btn>
+
+          <!-- Dark Mode Toggle -->
+          <q-btn flat round dense :icon="darkMode ? 'light_mode' : 'dark_mode'" @click="toggleDarkMode" class="q-mr-xs">
+            <q-tooltip>{{ darkMode ? (currentLanguage === 'it' ? 'Tema Chiaro' : currentLanguage === 'en' ? 'Light Mode' : 'Helles Design') : (currentLanguage === 'it' ? 'Tema Scuro' : currentLanguage === 'en' ? 'Dark Mode' : 'Dunkles Design') }}</q-tooltip>
+          </q-btn>
+
+          <q-btn flat round dense icon="refresh" @click="loadMandanten" :loading="loading">
+            <q-tooltip>{{ t('refreshTooltip') }}</q-tooltip>
+          </q-btn>
+        </q-toolbar>
+      </q-header>
+
+      <!-- Page Content -->
+      <q-page-container>
+        <q-page class="q-pa-md flex flex-center flex-column">
+
+          <div class="main-container">
+            <div class="text-center q-mb-lg">
+              <h4 class="text-h4 text-weight-bold q-my-none text-gradient">{{ t('welcomeTitle') }}</h4>
+              <p class="text-subtitle1 q-mt-xs" :class="darkMode ? 'text-grey-5' : 'text-grey-7'">{{ t('welcomeSubtitle') }}</p>
+            </div>
+
+            <!-- Loading Skeleton -->
+            <div v-if="loading && mandanten.length === 0" class="row q-col-gutter-md">
+              <div v-for="i in 3" :key="i" class="col-12 col-md-4">
+                <q-card flat bordered class="q-pa-md bg-dark-card border-glow" :dark="darkMode">
+                  <q-skeleton type="rect" height="40px" class="q-mb-md" :dark="darkMode" />
+                  <q-skeleton type="text" width="60%" :dark="darkMode" />
+                  <q-skeleton type="text" width="40%" :dark="darkMode" />
+                </q-card>
+              </div>
+            </div>
+
+            <!-- Mandanten Cards Grid -->
+            <div v-else class="row q-col-gutter-md justify-center">
+              <div v-for="m in mandanten" :key="m.id" class="col-12 col-sm-6 col-md-4">
+                <q-card 
+                  flat 
+                  bordered 
+                  class="mandant-card bg-dark-card border-glow cursor-pointer transition-all"
+                  :dark="darkMode"
+                  @click="selectMandant(m)"
+                >
+                  <q-card-section class="q-pb-xs">
+                    <div class="row items-center no-wrap">
+                      <div class="col">
+                        <div class="row items-center q-gutter-xs">
+                          <div style="font-size: 1.25rem; font-weight: bold; color: var(--q-primary);">{{ m.name }}</div>
+                        </div>
+                        <div v-if="m.beschreibung" class="text-caption q-mt-xs" :class="darkMode ? 'text-grey-5' : 'text-grey-7'">{{ m.beschreibung }}</div>
+                      </div>
+                      
+                      <!-- Status Badge -->
+                      <q-chip 
+                        clickable 
+                        dense 
+                        :color="m.online ? 'positive' : 'grey-7'" 
+                        text-color="white"
+                        class="text-weight-bold shadow-1"
+                      >
+                        <q-icon :name="m.online ? 'check_circle' : 'power_settings_new'" size="14px" class="q-mr-xs" />
+                        {{ m.online ? t('active') + ' (:' + m.port + ')' : t('inactive') + ' (:' + m.port + ')' }}
+                      </q-chip>
+                    </div>
+                  </q-card-section>
+
+                  <q-separator :dark="darkMode" class="q-my-xs opacity-20" />
+
+                  <q-card-actions align="right" class="q-pt-xs">
+                    <q-btn 
+                      flat 
+                      :color="m.online ? 'positive' : 'primary'" 
+                      :label="m.online ? t('connect') : t('startOpen')" 
+                      icon-right="arrow_forward" 
+                      class="text-weight-bold"
+                    />
+                  </q-card-actions>
+                </q-card>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Starting / Loading Dialog Overlay -->
+          <q-dialog v-model="startingDialog" persistent transition-show="scale" transition-hide="scale">
+            <q-card class="q-pa-lg text-center border-glow-dialog" :class="darkMode ? 'bg-dark-card text-white' : 'bg-white text-dark'" style="min-width: 360px; border-radius: 16px;">
+              <q-card-section class="q-pa-md">
+                <q-spinner-dots color="primary" size="64px" class="q-mb-md" />
+                <div class="text-h6 text-weight-bold">
+                  {{ currentLanguage === 'it' ? 'Mandante' : currentLanguage === 'en' ? 'Client' : 'Mandant' }} '{{ selectedMandant?.name }}'
+                </div>
+                <div class="text-subtitle1 text-blue-4 q-mt-xs text-weight-medium">{{ startingStatusMessage }}</div>
+                
+                <q-banner v-if="errorMessage" class="bg-negative text-white q-mt-md rounded-borders text-left">
+                  <template v-slot:avatar>
+                    <q-icon name="error" color="white" />
+                  </template>
+                  {{ errorMessage }}
+                </q-banner>
+
+                <q-linear-progress v-else indeterminate color="primary" class="q-mt-lg rounded-borders" height="6px" />
+              </q-card-section>
+              <q-card-actions v-if="errorMessage" align="center" class="q-pt-none">
+                <q-btn flat :label="t('close')" color="primary" v-close-popup />
+              </q-card-actions>
+            </q-card>
+          </q-dialog>
+
+
+        </q-page>
+      </q-page-container>
+
+    </q-layout>
+  </div>
+
+  <!-- Vue 3 & Quasar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.14.2/dist/quasar.umd.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.14.2/dist/lang/de.umd.prod.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

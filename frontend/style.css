@@ -1,0 +1,87 @@
+:root {
+  --q-primary: #3b82f6;
+  --q-secondary: #26A69A;
+  --q-accent: #9C27B0;
+  --q-positive: #2E7D32;
+  --q-negative: #C62828;
+  --q-info: #0288D1;
+  --q-warning: #F57C00;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.body--dark {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 960px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.body--dark .text-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-dark-card {
+  background: #ffffff;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.body--dark .bg-dark-card {
+  background: #1e293b;
+}
+
+.border-glow {
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+body.body--dark .border-glow {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mandant-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.3s ease;
+}
+
+.mandant-card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+}
+
+.bg-dark-dialog {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  transition: background-color 0.3s ease;
+}
+
+body.body--dark .bg-dark-dialog {
+  background: #1e293b;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.border-glow-dialog {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+body.body--dark .border-glow-dialog {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.2);
+}

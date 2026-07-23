@@ -1,0 +1,25 @@
+# Executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Binaries / Builds
+/build/bin/
+/frontend/dist/
+/frontend/node_modules/
+
+# Local Settings & Configs with sensitive info
+Settings-select.json
+*.env
+
+# IDE / Editor folders
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
