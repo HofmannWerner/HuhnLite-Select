@@ -317,12 +317,16 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Befehl zum Starten ausführen cmd.Start()
 	execName := "HuhnLite-Server.exe"
 	if serverExec != "" {
 		execName = strings.Trim(strings.TrimSpace(serverExec), "\"'")
+		// Fallback for Windows environment variables like %programfiles%
+		if strings.HasPrefix(strings.ToLower(execName), "%programfiles%") {
+			pf := os.Getenv("ProgramFiles")
+			execName = strings.Replace(execName, "%programfiles%", pf, 1)
+			execName = strings.Replace(execName, "%PROGRAMFILES%", pf, 1)
+		}
 	}
-
 
 	// Falls relativer Pfad oder nur Dateiname, prüfe Fallbacks
 	if !filepath.IsAbs(execName) {
@@ -335,7 +339,11 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 		}
 		for _, cand := range candidates {
 			if _, err := os.Stat(cand); err == nil {
-				execName = cand
+				if absCand, errAbs := filepath.Abs(cand); errAbs == nil {
+					execName = absCand
+				} else {
+					execName = cand
+				}
 				break
 			}
 		}
