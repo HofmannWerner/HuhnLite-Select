@@ -296,12 +296,13 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	basePort := 8080
+	if settings.BasePort > 0 {
+		basePort = settings.BasePort
+	}
+
 	port := targetMandant.Port
 	if port == 0 {
-		basePort := 8080
-		if settings.BasePort > 0 {
-			basePort = settings.BasePort
-		}
 		port = basePort + targetMandant.MandantNr
 	}
 
@@ -340,7 +341,7 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	cmd := exec.Command(execName, "-port", strconv.Itoa(port), "-mandant", strconv.Itoa(targetMandant.MandantNr))
+	cmd := exec.Command(execName, "-port", strconv.Itoa(port), "-mandant", strconv.Itoa(targetMandant.MandantNr), "-launcher-port", strconv.Itoa(basePort))
 	if filepath.IsAbs(execName) {
 		cmd.Dir = filepath.Dir(execName)
 	} else {
