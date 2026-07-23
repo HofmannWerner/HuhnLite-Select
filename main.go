@@ -108,13 +108,15 @@ func loadSettings() error {
 	}
 
 	var newSettings Settings
+	// Direkt unmarshals, um BasePort und ServerExec einzulesen
+	_ = json.Unmarshal(data, &newSettings)
+
 	if execVal, ok := rawData["serverExec"].(string); ok && execVal != "" {
 		newSettings.ServerExec = execVal
 	}
 
 	// Falls es eine fertige "mandanten" Liste im JSON gibt (z.B. aus der bisherigen Launcher-Struktur)
-	if mList, ok := rawData["mandanten"].([]interface{}); ok && len(mList) > 0 {
-		_ = json.Unmarshal(data, &newSettings)
+	if len(newSettings.Mandanten) > 0 {
 		for i := range newSettings.Mandanten {
 			if strings.TrimSpace(newSettings.Mandanten[i].Name) == "" {
 				newSettings.Mandanten[i].Name = fmt.Sprintf("Mandant %d", newSettings.Mandanten[i].MandantNr)
@@ -158,7 +160,11 @@ func loadSettings() error {
 				}
 			}
 
-			port := 8080 + n
+			basePort := 8080
+			if newSettings.BasePort > 0 {
+				basePort = newSettings.BasePort
+			}
+			port := basePort + n
 			if pVal, ok := rawData[fmt.Sprintf("port_%d", n)]; ok {
 				if pNum, ok := pVal.(float64); ok {
 					port = int(pNum)
@@ -242,10 +248,15 @@ func handleGetMandanten(w http.ResponseWriter, r *http.Request) {
 	copy(mandantenCopy, settings.Mandanten)
 	settingsLock.RUnlock()
 
+	basePort := 8080
+	if settings.BasePort > 0 {
+		basePort = settings.BasePort
+	}
+
 	// Port Status prüfen für jeden Mandanten (808n)
 	for i := range mandantenCopy {
 		if mandantenCopy[i].Port == 0 && mandantenCopy[i].MandantNr > 0 {
-			mandantenCopy[i].Port = 8080 + mandantenCopy[i].MandantNr
+			mandantenCopy[i].Port = basePort + mandantenCopy[i].MandantNr
 		}
 		mandantenCopy[i].Online = isPortOpen(mandantenCopy[i].Port)
 	}
@@ -280,7 +291,11 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 
 	port := targetMandant.Port
 	if port == 0 {
-		port = 8080 + targetMandant.MandantNr
+		basePort := 8080
+		if settings.BasePort > 0 {
+			basePort = settings.BasePort
+		}
+		port = basePort + targetMandant.MandantNr
 	}
 
 	// Falls Port bereits offen ist: direkt Rückmeldung
