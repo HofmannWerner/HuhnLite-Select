@@ -39,13 +39,13 @@ type Settings struct {
 
 var (
 	settingsFileNames = []string{
+		"settings_select.json",
+		"Settings-select.json",
 		"settings_server.json",
 		"settings_server_mariadb.json",
 		"Settings-server.json",
 		"settings_serv.json",
 		"settings.json",
-		"settings_select.json",
-		"Settings-select.json",
 	}
 	settings     Settings
 	settingsLock sync.RWMutex
