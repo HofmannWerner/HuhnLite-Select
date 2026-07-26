@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"sort"
 	"strconv"
 	"strings"
@@ -34,23 +35,85 @@ type Mandant struct {
 type Settings struct {
 	ServerExec string    `json:"serverExec"`
 	BasePort   int       `json:"basePort"`
+	BaseLink   string    `json:"baseLink"`
 	Mandanten  []Mandant `json:"mandanten"`
 }
 
 var (
 	settingsFileNames = []string{
-		"settings_select.json",
-		"Settings-select.json",
 		"settings_server.json",
 		"settings_server_mariadb.json",
 		"Settings-server.json",
 		"settings_serv.json",
 		"settings.json",
+		"settings_select.json",
+		"Settings-select.json",
 	}
 	settings     Settings
 	settingsLock sync.RWMutex
 	loadedFile   string
 )
+
+type SessionTracker struct {
+	sync.Mutex
+	sessions map[string]time.Time
+}
+
+var activeSessions = SessionTracker{
+	sessions: make(map[string]time.Time),
+}
+
+func (st *SessionTracker) Heartbeat(id string) {
+	if id == "" {
+		return
+	}
+	st.Lock()
+	defer st.Unlock()
+	st.sessions[id] = time.Now()
+}
+
+func (st *SessionTracker) Remove(id string) {
+	st.Lock()
+	defer st.Unlock()
+	delete(st.sessions, id)
+}
+
+func (st *SessionTracker) CountActiveOtherSessions(currentID string) int {
+	st.Lock()
+	defer st.Unlock()
+	now := time.Now()
+	count := 0
+	for id, lastSeen := range st.sessions {
+		if id != currentID && now.Sub(lastSeen) < 15*time.Second {
+			count++
+		}
+	}
+	return count
+}
+
+func hasActiveMandanten() bool {
+	_ = loadSettings()
+	settingsLock.RLock()
+	mandantenCopy := make([]Mandant, len(settings.Mandanten))
+	copy(mandantenCopy, settings.Mandanten)
+	basePort := settings.BasePort
+	settingsLock.RUnlock()
+
+	if basePort == 0 {
+		basePort = 8080
+	}
+
+	for _, m := range mandantenCopy {
+		port := m.Port
+		if port == 0 && m.MandantNr > 0 {
+			port = basePort + m.MandantNr
+		}
+		if isPortOpen(port) {
+			return true
+		}
+	}
+	return false
+}
 
 
 func findSettingsFile() string {
@@ -87,6 +150,40 @@ func findSettingsFile() string {
 	return ""
 }
 
+func sanitizeJSONBackslashes(data []byte) []byte {
+	str := string(data)
+	var buf strings.Builder
+	inString := false
+	escaped := false
+	for i := 0; i < len(str); i++ {
+		ch := str[i]
+		if escaped {
+			buf.WriteByte(ch)
+			escaped = false
+			continue
+		}
+		if ch == '"' {
+			inString = !inString
+			buf.WriteByte(ch)
+			continue
+		}
+		if inString && ch == '\\' {
+			if i+1 < len(str) {
+				next := str[i+1]
+				if next == '"' || next == '\\' || next == '/' || next == 'b' || next == 'f' || next == 'n' || next == 'r' || next == 't' || next == 'u' {
+					buf.WriteByte(ch)
+					escaped = true
+					continue
+				}
+			}
+			buf.WriteString("\\\\")
+			continue
+		}
+		buf.WriteByte(ch)
+	}
+	return []byte(buf.String())
+}
+
 func loadSettings() error {
 	settingsLock.Lock()
 	defer settingsLock.Unlock()
@@ -104,7 +201,12 @@ func loadSettings() error {
 	// Raw JSON Map parsen, um dynamisch mandant_1, mandant_2, mandant_n Keys zu unterstützen
 	var rawData map[string]interface{}
 	if err := json.Unmarshal(data, &rawData); err != nil {
-		return fmt.Errorf("Fehler beim Parsen von %s: %w", targetFile, err)
+		sanitizedData := sanitizeJSONBackslashes(data)
+		if errRetry := json.Unmarshal(sanitizedData, &rawData); errRetry == nil {
+			data = sanitizedData
+		} else {
+			return fmt.Errorf("Fehler beim Parsen von %s: %w", targetFile, err)
+		}
 	}
 
 	var newSettings Settings
@@ -113,6 +215,11 @@ func loadSettings() error {
 
 	if execVal, ok := rawData["serverExec"].(string); ok && execVal != "" {
 		newSettings.ServerExec = execVal
+	}
+	if linkVal, ok := rawData["baseLink"].(string); ok && linkVal != "" {
+		newSettings.BaseLink = linkVal
+	} else if linkVal, ok := rawData["baselink"].(string); ok && linkVal != "" {
+		newSettings.BaseLink = linkVal
 	}
 	
 	// Fallback für den Port, falls er in der JSON-Datei "port" statt "basePort" heißt
@@ -206,6 +313,24 @@ func isPortOpen(port int) bool {
 	return true
 }
 
+func openBrowser(rawURL string) error {
+	targetURL := strings.TrimSpace(rawURL)
+	if !strings.HasPrefix(targetURL, "http://") && !strings.HasPrefix(targetURL, "https://") {
+		targetURL = "http://" + targetURL
+	}
+
+	var cmd *exec.Cmd
+	switch runtime.GOOS {
+	case "windows":
+		cmd = exec.Command("cmd", "/c", "start", "", targetURL)
+	case "darwin":
+		cmd = exec.Command("open", targetURL)
+	default:
+		cmd = exec.Command("xdg-open", targetURL)
+	}
+	return cmd.Start()
+}
+
 func main() {
 	log.Println("[HuhnLite-Select] Launcher wird gestartet...")
 
@@ -214,12 +339,33 @@ func main() {
 		log.Printf("Warnung beim Laden der Settings: %v\n", err)
 	}
 
+	port := 8080
+	if settings.BasePort > 0 {
+		port = settings.BasePort
+	}
+
+	targetURL := settings.BaseLink
+	if strings.TrimSpace(targetURL) == "" {
+		targetURL = fmt.Sprintf("http://localhost:%d", port)
+	}
+
+	// Falls bereits eine Instanz auf dem Port läuft: Browser öffnen und sanft beenden
+	if isPortOpen(port) {
+		log.Printf("[HuhnLite-Select] Port %d bereits aktiv. Öffne Browser: %s\n", port, targetURL)
+		if err := openBrowser(targetURL); err != nil {
+			log.Printf("Fehler beim Öffnen des Browsers: %v\n", err)
+		}
+		return
+	}
+
 	// 2. HTTP Server Router
 	mux := http.NewServeMux()
 
 	// API Endpunkte
 	mux.HandleFunc("/api/mandanten", handleGetMandanten)
 	mux.HandleFunc("/api/start", handleStartMandant)
+	mux.HandleFunc("/api/heartbeat", handleHeartbeat)
+	mux.HandleFunc("/api/exit", handleExit)
 
 	// Embedded Static Frontend
 	frontendSub, err := fs.Sub(frontendFS, "frontend")
@@ -235,13 +381,17 @@ func main() {
 		fileServer.ServeHTTP(w, r)
 	})
 
-	port := 8080
-	if settings.BasePort > 0 {
-		port = settings.BasePort
-	}
+	// 3. Standardbrowser automatisch aufrufen
+	go func() {
+		time.Sleep(150 * time.Millisecond)
+		log.Printf("[HuhnLite-Select] Öffne Standardbrowser: %s\n", targetURL)
+		if err := openBrowser(targetURL); err != nil {
+			log.Printf("[HuhnLite-Select] Fehler beim Öffnen des Browsers: %v\n", err)
+		}
+	}()
 
 	addr := fmt.Sprintf(":%d", port)
-	log.Printf("[HuhnLite-Select] Launcher läuft unter http://localhost%s\n", addr)
+	log.Printf("[HuhnLite-Select] Launcher läuft unter %s\n", targetURL)
 	if err := http.ListenAndServe(addr, mux); err != nil {
 		log.Fatalf("Server-Fehler: %v", err)
 	}
@@ -306,12 +456,22 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 		port = basePort + targetMandant.MandantNr
 	}
 
+	host := r.Host
+	if h, _, err := net.SplitHostPort(r.Host); err == nil {
+		host = h
+	}
+	scheme := "http"
+	if r.TLS != nil {
+		scheme = "https"
+	}
+	targetURL := fmt.Sprintf("%s://%s:%d", scheme, host, port)
+
 	// Falls Port bereits offen ist: direkt Rückmeldung
 	if isPortOpen(port) {
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(map[string]interface{}{
 			"success": true,
-			"url":     fmt.Sprintf("http://localhost:%d", port),
+			"url":     targetURL,
 			"already": true,
 		})
 		return
@@ -349,7 +509,24 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	cmd := exec.Command(execName, "-port", strconv.Itoa(port), "-mandant", strconv.Itoa(targetMandant.MandantNr), "-launcher-port", strconv.Itoa(basePort))
+	lang := r.URL.Query().Get("lng")
+	if lang == "" {
+		lang = r.URL.Query().Get("lang")
+	}
+	if lang == "" {
+		lang = r.URL.Query().Get("language")
+	}
+	if lang == "" {
+		lang = "de"
+	}
+
+	cmd := exec.Command(execName,
+		"-port", strconv.Itoa(port),
+		"-mandant", strconv.Itoa(targetMandant.MandantNr),
+		"-launcher-port", strconv.Itoa(basePort),
+		"-language", lang,
+		"-lng", lang,
+	)
 	if filepath.IsAbs(execName) {
 		cmd.Dir = filepath.Dir(execName)
 	} else {
@@ -384,13 +561,31 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 	if started {
 		json.NewEncoder(w).Encode(map[string]interface{}{
 			"success": true,
-			"url":     fmt.Sprintf("http://localhost:%d", port),
+			"url":     targetURL,
 		})
 	} else {
 		json.NewEncoder(w).Encode(map[string]interface{}{
 			"success": true,
-			"url":     fmt.Sprintf("http://localhost:%d", port),
+			"url":     targetURL,
 			"warning": "Server startet noch...",
 		})
 	}
+}
+
+func handleHeartbeat(w http.ResponseWriter, r *http.Request) {
+	sessionID := r.URL.Query().Get("sessionId")
+	if sessionID != "" {
+		activeSessions.Heartbeat(sessionID)
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]interface{}{"status": "ok"})
+}
+
+func handleExit(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]interface{}{
+		"success": true,
+		"message": "Tab wird geschlossen.",
+	})
+	log.Println("[HuhnLite-Select] Beenden angefordert - Browsertab wird geschlossen.")
 }

@@ -21,7 +21,14 @@ const translations = {
     close: 'Schließen',
     stillStarting: 'Server startet noch...',
     defaultDesc: 'Mandant Nr. {id}',
-    mandantLabel: 'Mandant {id}'
+    mandantLabel: 'Mandant {id}',
+    exitTooltip: 'HuhnLite-Select beenden',
+    exitTitle: 'HuhnLite-Select beenden',
+    exitConfirmMessage: 'Möchten Sie HuhnLite-Select wirklich beenden?',
+    exitClosed: 'HuhnLite-Select wurde beendet. Sie können diesen Tab jetzt schließen.',
+    exitTabOnlyMessage: 'Tab geschlossen. HuhnLite-Select bleibt im Hintergrund für andere aktive Sitzungen/Mandanten aktiv.',
+    cancel: 'Abbrechen',
+    exit: 'Beenden'
   },
   en: {
     title: 'HuhnLite | Client Selection',
@@ -43,7 +50,14 @@ const translations = {
     close: 'Close',
     stillStarting: 'Server is still starting...',
     defaultDesc: 'Client No. {id}',
-    mandantLabel: 'Client {id}'
+    mandantLabel: 'Client {id}',
+    exitTooltip: 'Quit HuhnLite-Select',
+    exitTitle: 'Quit HuhnLite-Select',
+    exitConfirmMessage: 'Do you really want to quit HuhnLite-Select?',
+    exitClosed: 'HuhnLite-Select has been shut down. You may now close this tab.',
+    exitTabOnlyMessage: 'Tab closed. HuhnLite-Select remains active in the background for other active sessions/clients.',
+    cancel: 'Cancel',
+    exit: 'Quit'
   },
   it: {
     title: 'HuhnLite | Selezione del Mandante',
@@ -65,7 +79,14 @@ const translations = {
     close: 'Chiudi',
     stillStarting: 'Il server si sta ancora avviando...',
     defaultDesc: 'Mandante N. {id}',
-    mandantLabel: 'Mandante {id}'
+    mandantLabel: 'Mandante {id}',
+    exitTooltip: 'Chiudi HuhnLite-Select',
+    exitTitle: 'Chiudi HuhnLite-Select',
+    exitConfirmMessage: 'Vuoi davvero uscire da HuhnLite-Select?',
+    exitClosed: 'HuhnLite-Select è stato chiuso. Ora puoi chiudere questa scheda.',
+    exitTabOnlyMessage: 'Scheda chiusa. HuhnLite-Select rimane attivo in background per altre sessioni/mandanti attivi.',
+    cancel: 'Annulla',
+    exit: 'Esci'
   }
 };
 
@@ -130,6 +151,12 @@ const app = createApp({
       }
     };
 
+    const getMandantUrl = (port) => {
+      const protocol = window.location.protocol;
+      const hostname = window.location.hostname;
+      return `${protocol}//${hostname}:${port}`;
+    };
+
     const selectMandant = async (mandant) => {
       selectedMandant.value = mandant;
       errorMessage.value = '';
@@ -138,7 +165,7 @@ const app = createApp({
       if (mandant.online) {
         startingStatusMessage.value = t('redirecting');
         setTimeout(() => {
-          window.location.href = `http://localhost:${mandant.port}`;
+          window.location.href = getMandantUrl(mandant.port);
         }, 500);
         return;
       }
@@ -146,13 +173,15 @@ const app = createApp({
       startingStatusMessage.value = t('starting', { name: mandant.name });
       
       try {
-        const res = await fetch(`/api/start?mandantId=${mandant.id}`);
+        const lang = currentLanguage.value || 'de';
+        const res = await fetch(`/api/start?mandantId=${mandant.id}&lng=${lang}&lang=${lang}&language=${lang}`);
         const data = await res.json();
 
         if (res.ok && data.success) {
           startingStatusMessage.value = t('started');
           setTimeout(() => {
-            window.location.href = data.url || `http://localhost:${mandant.port}`;
+            const redirectUrl = (data.url && !data.url.includes('localhost')) ? data.url : getMandantUrl(mandant.port);
+            window.location.href = redirectUrl;
           }, 800);
         } else {
           startingStatusMessage.value = t('errorStarting');
@@ -164,17 +193,81 @@ const app = createApp({
       }
     };
 
+    const sessionId = sessionStorage.getItem('huhnlite-session-id') || 'sess_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+    sessionStorage.setItem('huhnlite-session-id', sessionId);
+
+    const sendHeartbeat = async () => {
+      try {
+        await fetch(`/api/heartbeat?sessionId=${sessionId}`);
+      } catch (e) {
+        // ignore network error
+      }
+    };
+
+    const exitedDialog = ref(false);
+    const exitStatusMessage = ref('');
+
+    const closeTab = () => {
+      // 1. Standard window.close
+      window.close();
+
+      // 2. Trick für Chromium-Browser (Chrome/Edge)
+      try {
+        window.open('', '_self', '');
+        window.close();
+      } catch (e) {}
+
+      // 3. Fallback: Falls der Browser das Schließen von Tabs blockiert,
+      // leite auf eine leere Seite (about:blank) weiter
+      setTimeout(() => {
+        if (!window.closed) {
+          window.location.href = 'about:blank';
+        }
+      }, 250);
+    };
+
+    const confirmExit = () => {
+      Quasar.Dialog.create({
+        title: t('exitTitle'),
+        message: t('exitConfirmMessage'),
+        cancel: {
+          label: t('cancel'),
+          flat: true
+        },
+        ok: {
+          label: t('exit'),
+          color: 'negative',
+          unelevated: true
+        },
+        dark: darkMode.value
+      }).onOk(() => {
+        exitedDialog.value = true;
+        exitStatusMessage.value = t('exitClosed');
+        try {
+          fetch('/api/exit', { method: 'POST' });
+        } catch (e) {}
+
+        setTimeout(() => {
+          closeTab();
+        }, 300);
+      });
+    };
+
     onMounted(() => {
       Quasar.Dark.set(darkMode.value);
       document.title = t('tabTitle');
       loadMandanten();
+      sendHeartbeat();
       setInterval(loadMandanten, 10000);
+      setInterval(sendHeartbeat, 5000);
     });
 
     return {
       mandanten,
       loading,
       startingDialog,
+      exitedDialog,
+      exitStatusMessage,
       selectedMandant,
       startingStatusMessage,
       errorMessage,
@@ -185,7 +278,8 @@ const app = createApp({
       toggleDarkMode,
       getMandantDisplayTitle,
       loadMandanten,
-      selectMandant
+      selectMandant,
+      confirmExit
     };
 
   }

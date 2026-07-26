@@ -68,8 +68,21 @@
             <q-tooltip>{{ darkMode ? (currentLanguage === 'it' ? 'Tema Chiaro' : currentLanguage === 'en' ? 'Light Mode' : 'Helles Design') : (currentLanguage === 'it' ? 'Tema Scuro' : currentLanguage === 'en' ? 'Dark Mode' : 'Dunkles Design') }}</q-tooltip>
           </q-btn>
 
-          <q-btn flat round dense icon="refresh" @click="loadMandanten" :loading="loading">
+          <q-btn flat round dense icon="refresh" @click="loadMandanten" :loading="loading" class="q-mr-xs">
             <q-tooltip>{{ t('refreshTooltip') }}</q-tooltip>
+          </q-btn>
+
+          <!-- Exit Button with explicit label -->
+          <q-btn 
+            unelevated 
+            color="negative" 
+            icon="power_settings_new" 
+            :label="t('exit')" 
+            @click="confirmExit" 
+            class="q-ml-sm text-weight-bold shadow-2"
+            style="border-radius: 8px; padding: 2px 12px;"
+          >
+            <q-tooltip>{{ t('exitTooltip') }}</q-tooltip>
           </q-btn>
         </q-toolbar>
       </q-header>
@@ -167,6 +180,17 @@
               <q-card-actions v-if="errorMessage" align="center" class="q-pt-none">
                 <q-btn flat :label="t('close')" color="primary" v-close-popup />
               </q-card-actions>
+            </q-card>
+          </q-dialog>
+
+          <!-- Exited Dialog Overlay -->
+          <q-dialog v-model="exitedDialog" persistent transition-show="fade" transition-hide="fade">
+            <q-card class="q-pa-lg text-center border-glow-dialog" :class="darkMode ? 'bg-dark-card text-white' : 'bg-white text-dark'" style="min-width: 360px; border-radius: 16px;">
+              <q-card-section class="q-pa-md">
+                <q-icon name="power_settings_new" color="negative" size="64px" class="q-mb-md" />
+                <div class="text-h6 text-weight-bold">{{ t('exitTitle') }}</div>
+                <div class="text-subtitle1 q-mt-sm" :class="darkMode ? 'text-grey-4' : 'text-grey-8'">{{ exitStatusMessage || t('exitClosed') }}</div>
+              </q-card-section>
             </q-card>
           </q-dialog>
 
