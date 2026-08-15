@@ -1,0 +1,21 @@
+{ "serverExec": "%HuhnLite-Server.exe",
+  "basePort": 9000,
+  "baseLink": "localhost:9000"
+  "db_connection": "HuhnLite_prod.db",
+  "db_connection_test": "HuhnLite_test.db",
+  "db_engine": "sqlite",
+  "mandant": 2,
+  "mandant_1": "Otto Dotter",
+  "mandant_2": "Gustav Hahn",
+  "mode": "server",
+  "system_1": 1,
+  "system_2": 1,
+  "autobackup_1": 1,
+  "autobackup_2": 1,
+  "backuptime_1": "",
+  "backuptime_2": "",
+  "test": 0,
+  "test_1": 1,
+  "test_2": 0,
+  "waittime": "00:01"
+}

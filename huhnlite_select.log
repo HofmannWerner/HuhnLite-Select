@@ -1,0 +1,1106 @@
+2026/07/27 10:53:07 ==================================================
+2026/07/27 10:53:07 [HuhnLite-Select] Log gestartet um 2026-07-27 10:53:07
+2026/07/27 10:53:07 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:53:07 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:53:07 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:53:07 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:53:07 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Server.exe')
+2026/07/27 10:53:07 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:53:07 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Server.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:53:07 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Server.exe' -> Aufgelöst: 'C:\Program Files\HuhnLite\HuhnLite-Server.exe'
+2026/07/27 10:53:07 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Program Files\HuhnLite\HuhnLite-Server.exe' mit Argumenten [-port 9000] (Dir: C:\Program Files\HuhnLite)
+2026/07/27 10:53:07 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 19288)
+2026/07/27 10:53:08 [HuhnLite-Select] ServerExec auf Port 9000 erfolgreich erreichbar.
+2026/07/27 10:53:08 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:53:08 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:55:53 ==================================================
+2026/07/27 10:55:53 [HuhnLite-Select] Log gestartet um 2026-07-27 10:55:53
+2026/07/27 10:55:53 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:55:53 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:55:53 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:55:53 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:55:53 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Server.exe')
+2026/07/27 10:55:53 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:55:53 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Server.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:55:53 [HuhnLite-Select] Port 9000 ist bereits erreichbar. ServerExec wird nicht erneut gestartet.
+2026/07/27 10:55:53 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:55:53 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:35 ==================================================
+2026/07/27 10:56:35 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:35
+2026/07/27 10:56:35 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:35 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:35 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:35 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:35 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:35 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:35 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:35 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:35 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:35 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 2608)
+2026/07/27 10:56:35 ==================================================
+2026/07/27 10:56:35 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:35
+2026/07/27 10:56:35 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:35 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:35 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:35 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:35 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:35 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:35 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:35 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:35 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:35 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 23100)
+2026/07/27 10:56:36 ==================================================
+2026/07/27 10:56:36 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:36
+2026/07/27 10:56:36 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:36 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:36 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:36 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:36 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:36 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:36 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:36 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:36 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:36 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 4052)
+2026/07/27 10:56:36 ==================================================
+2026/07/27 10:56:36 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:36
+2026/07/27 10:56:36 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:36 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:36 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:36 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:36 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:36 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:36 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:36 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:36 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:36 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 5248)
+2026/07/27 10:56:36 ==================================================
+2026/07/27 10:56:36 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:36
+2026/07/27 10:56:36 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:36 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:36 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:36 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:36 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:36 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:36 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:36 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:36 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:36 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 11144)
+2026/07/27 10:56:36 ==================================================
+2026/07/27 10:56:36 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:36
+2026/07/27 10:56:36 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:36 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:36 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:36 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:36 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:36 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:36 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:36 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:36 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:36 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 21160)
+2026/07/27 10:56:36 ==================================================
+2026/07/27 10:56:36 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:36
+2026/07/27 10:56:36 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:36 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:36 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:36 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:36 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:36 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:36 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:36 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:36 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:36 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 22288)
+2026/07/27 10:56:37 ==================================================
+2026/07/27 10:56:37 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:37
+2026/07/27 10:56:37 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:37 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:37 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:37 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:37 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:37 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:37 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:37 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:37 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:37 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 8220)
+2026/07/27 10:56:37 ==================================================
+2026/07/27 10:56:37 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:37
+2026/07/27 10:56:37 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:37 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:37 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:37 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:37 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:37 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:37 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:37 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:37 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:37 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 11176)
+2026/07/27 10:56:37 ==================================================
+2026/07/27 10:56:37 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:37
+2026/07/27 10:56:37 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:37 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:37 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:37 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:37 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:37 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:37 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:37 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:37 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:37 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 20552)
+2026/07/27 10:56:37 ==================================================
+2026/07/27 10:56:37 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:37
+2026/07/27 10:56:37 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:37 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:37 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:37 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:37 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:37 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:37 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:37 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:37 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:37 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 18924)
+2026/07/27 10:56:37 ==================================================
+2026/07/27 10:56:37 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:37
+2026/07/27 10:56:37 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:37 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:37 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:37 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:37 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:37 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:37 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:37 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:37 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:37 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 17580)
+2026/07/27 10:56:37 ==================================================
+2026/07/27 10:56:37 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:37
+2026/07/27 10:56:37 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:37 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:37 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:37 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:37 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:37 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:37 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:37 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:37 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:37 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 19588)
+2026/07/27 10:56:38 ==================================================
+2026/07/27 10:56:38 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:38
+2026/07/27 10:56:38 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:38 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:38 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:38 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:38 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:38 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:38 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:38 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:38 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:38 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 2304)
+2026/07/27 10:56:38 ==================================================
+2026/07/27 10:56:38 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:38
+2026/07/27 10:56:38 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:38 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:38 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:38 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:38 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:38 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:38 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:38 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:38 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:38 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 13044)
+2026/07/27 10:56:38 ==================================================
+2026/07/27 10:56:38 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:38
+2026/07/27 10:56:38 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:38 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:38 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:38 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:38 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:38 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:38 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:38 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:38 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:38 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 25668)
+2026/07/27 10:56:38 ==================================================
+2026/07/27 10:56:38 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:38
+2026/07/27 10:56:38 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:38 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:38 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:38 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:38 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:38 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:38 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:38 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:38 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:38 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 25916)
+2026/07/27 10:56:38 ==================================================
+2026/07/27 10:56:38 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:38
+2026/07/27 10:56:38 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:38 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:38 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:38 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:38 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:38 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:38 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:38 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:38 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:38 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 26160)
+2026/07/27 10:56:39 ==================================================
+2026/07/27 10:56:39 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:39
+2026/07/27 10:56:39 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:39 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:39 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:39 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:39 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:39 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:39 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:39 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:39 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:39 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 26404)
+2026/07/27 10:56:39 ==================================================
+2026/07/27 10:56:39 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:39
+2026/07/27 10:56:39 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:39 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:39 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:39 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:39 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:39 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:39 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:39 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:39 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:39 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 25700)
+2026/07/27 10:56:39 ==================================================
+2026/07/27 10:56:39 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:39
+2026/07/27 10:56:39 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:39 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:39 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:39 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:39 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:39 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:39 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:39 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:39 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:39 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 26748)
+2026/07/27 10:56:39 ==================================================
+2026/07/27 10:56:39 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:39
+2026/07/27 10:56:39 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:39 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:39 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:39 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:39 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:39 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:39 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:39 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:39 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:39 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 26992)
+2026/07/27 10:56:39 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:39 ==================================================
+2026/07/27 10:56:39 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:39
+2026/07/27 10:56:39 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:39 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:39 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:39 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:39 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:39 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:39 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:39 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:39 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:39 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 27248)
+2026/07/27 10:56:39 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:40 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:40 ==================================================
+2026/07/27 10:56:40 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:40
+2026/07/27 10:56:40 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:40 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:40 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:40 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:40 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:40 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:40 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:40 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:40 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:40 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 27548)
+2026/07/27 10:56:40 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:40 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:40 ==================================================
+2026/07/27 10:56:40 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:40
+2026/07/27 10:56:40 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:40 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:40 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:40 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:40 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:40 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:40 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:40 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:40 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:40 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 28188)
+2026/07/27 10:56:40 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:40 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:40 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:40 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:40 ==================================================
+2026/07/27 10:56:40 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:40
+2026/07/27 10:56:40 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:40 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:40 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:40 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:40 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:40 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:40 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:40 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:40 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:40 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 28592)
+2026/07/27 10:56:40 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:40 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:40 ==================================================
+2026/07/27 10:56:40 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:40
+2026/07/27 10:56:40 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:40 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:40 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:40 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:40 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:40 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:40 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:40 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:40 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:40 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 28968)
+2026/07/27 10:56:40 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:40 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:40 ==================================================
+2026/07/27 10:56:40 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:40
+2026/07/27 10:56:40 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:40 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:40 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:40 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:40 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:40 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:40 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:41 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:41 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:41 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 29396)
+2026/07/27 10:56:41 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:41 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:41 ==================================================
+2026/07/27 10:56:41 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:41
+2026/07/27 10:56:41 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:41 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:41 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:41 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:41 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:41 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:41 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:41 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:41 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:41 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 28980)
+2026/07/27 10:56:41 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:41 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:41 ==================================================
+2026/07/27 10:56:41 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:41
+2026/07/27 10:56:41 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:41 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:41 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:41 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:41 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:41 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:41 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:41 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:41 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:41 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 29840)
+2026/07/27 10:56:41 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:41 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:41 ==================================================
+2026/07/27 10:56:41 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:41
+2026/07/27 10:56:41 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:41 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:41 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:41 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:41 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:41 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:41 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:41 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:41 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:41 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:41 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 30276)
+2026/07/27 10:56:41 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:41 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:41 ==================================================
+2026/07/27 10:56:41 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:41
+2026/07/27 10:56:41 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:41 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:41 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:41 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:41 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:41 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:41 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:41 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:41 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:41 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:41 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 30696)
+2026/07/27 10:56:42 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:42 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:42 ==================================================
+2026/07/27 10:56:42 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:42
+2026/07/27 10:56:42 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:42 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:42 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:42 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:42 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:42 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:42 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:42 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:42 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:42 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 29708)
+2026/07/27 10:56:42 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:42 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:42 ==================================================
+2026/07/27 10:56:42 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:42
+2026/07/27 10:56:42 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:42 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:42 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:42 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:42 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:42 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:42 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:42 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:42 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:42 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 29112)
+2026/07/27 10:56:42 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:42 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:42 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:42 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:42 ==================================================
+2026/07/27 10:56:42 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:42
+2026/07/27 10:56:42 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:42 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:42 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:42 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:42 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:42 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:42 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:42 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:42 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:42 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 4320)
+2026/07/27 10:56:42 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:42 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:42 ==================================================
+2026/07/27 10:56:42 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:42
+2026/07/27 10:56:42 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:42 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:42 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:42 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:42 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:42 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:42 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:42 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:42 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:42 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 22572)
+2026/07/27 10:56:42 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:42 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:43 ==================================================
+2026/07/27 10:56:43 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:43
+2026/07/27 10:56:43 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:43 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:43 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:43 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:43 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:43 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:43 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:43 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:43 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:43 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 3588)
+2026/07/27 10:56:43 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:43 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:43 ==================================================
+2026/07/27 10:56:43 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:43
+2026/07/27 10:56:43 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:43 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:43 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:43 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:43 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:43 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:43 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:43 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:43 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:43 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 10676)
+2026/07/27 10:56:43 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:43 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:43 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:43 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:43 ==================================================
+2026/07/27 10:56:43 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:43
+2026/07/27 10:56:43 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:43 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:43 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:43 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:43 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:43 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:43 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:43 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:43 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:43 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 14000)
+2026/07/27 10:56:43 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:43 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:43 ==================================================
+2026/07/27 10:56:43 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:43
+2026/07/27 10:56:43 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:43 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:43 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:43 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:43 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:43 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:43 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:43 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:43 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:43 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 21348)
+2026/07/27 10:56:43 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:43 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:44 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:44 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:44 ==================================================
+2026/07/27 10:56:44 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:44
+2026/07/27 10:56:44 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:44 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:44 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:44 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:44 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:44 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:44 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:44 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:44 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:44 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 416)
+2026/07/27 10:56:44 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:44 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:44 ==================================================
+2026/07/27 10:56:44 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:44
+2026/07/27 10:56:44 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:44 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:44 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:44 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:44 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:44 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:44 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:44 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:44 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:44 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 1668)
+2026/07/27 10:56:44 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:44 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:44 ==================================================
+2026/07/27 10:56:44 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:44
+2026/07/27 10:56:44 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:44 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:44 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:44 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:44 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:44 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:44 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:44 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:44 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:44 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 15144)
+2026/07/27 10:56:44 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:44 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:44 ==================================================
+2026/07/27 10:56:45 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:45
+2026/07/27 10:56:45 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:45 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:45 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:45 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:45 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:45 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:45 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:45 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:45 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:45 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:45 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 16776)
+2026/07/27 10:56:45 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:45 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:45 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:45 ==================================================
+2026/07/27 10:56:45 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:45
+2026/07/27 10:56:45 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:45 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:45 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:45 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:45 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:45 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:45 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:45 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:45 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:45 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 24272)
+2026/07/27 10:56:45 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:45 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:45 ==================================================
+2026/07/27 10:56:45 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:45
+2026/07/27 10:56:45 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:45 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:45 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:45 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:45 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:45 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:45 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:45 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:45 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:45 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 26160)
+2026/07/27 10:56:45 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:45 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:45 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:45 ==================================================
+2026/07/27 10:56:45 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:45
+2026/07/27 10:56:45 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:45 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:45 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:45 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:45 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:45 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:45 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:45 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:45 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:45 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:45 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 26216)
+2026/07/27 10:56:46 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:46 ==================================================
+2026/07/27 10:56:46 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:46
+2026/07/27 10:56:46 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:46 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:46 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:46 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:46 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:46 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:46 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:46 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:46 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:46 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 26564)
+2026/07/27 10:56:46 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:46 ==================================================
+2026/07/27 10:56:46 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:46
+2026/07/27 10:56:46 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:46 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:46 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:46 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:46 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:46 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:46 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:46 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:46 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:46 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 26716)
+2026/07/27 10:56:46 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:46 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:46 ==================================================
+2026/07/27 10:56:46 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:46
+2026/07/27 10:56:46 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:46 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:46 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:46 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:46 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:46 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:46 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:46 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:46 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:46 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:46 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 27144)
+2026/07/27 10:56:46 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:46 ==================================================
+2026/07/27 10:56:46 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:46
+2026/07/27 10:56:46 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:46 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:46 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:46 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:46 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:46 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:46 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:46 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:46 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:46 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 27344)
+2026/07/27 10:56:46 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:46 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:47 ==================================================
+2026/07/27 10:56:47 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:47
+2026/07/27 10:56:47 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:47 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:47 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:47 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:47 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:47 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:47 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:47 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:47 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:47 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:47 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 26880)
+2026/07/27 10:56:47 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:47 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:47 ==================================================
+2026/07/27 10:56:47 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:47
+2026/07/27 10:56:47 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:47 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:47 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:47 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:47 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:47 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:47 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:47 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:47 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:47 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 24432)
+2026/07/27 10:56:47 ==================================================
+2026/07/27 10:56:47 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:47
+2026/07/27 10:56:47 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:47 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:47 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:47 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:47 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:47 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:47 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:47 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:47 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:47 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 28884)
+2026/07/27 10:56:47 ==================================================
+2026/07/27 10:56:47 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:47
+2026/07/27 10:56:47 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:47 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:47 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:47 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:47 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:47 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:47 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:47 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:47 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:47 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 29280)
+2026/07/27 10:56:47 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:47 ==================================================
+2026/07/27 10:56:48 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:48
+2026/07/27 10:56:48 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:48 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:48 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:48 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:48 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:48 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:48 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:48 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:48 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:48 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 29520)
+2026/07/27 10:56:48 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:48 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:48 ==================================================
+2026/07/27 10:56:48 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:48
+2026/07/27 10:56:48 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:48 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:48 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:48 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:48 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:48 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:48 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:48 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:48 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:48 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 29092)
+2026/07/27 10:56:48 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:48 ==================================================
+2026/07/27 10:56:48 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:48
+2026/07/27 10:56:48 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:48 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:48 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:48 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:48 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:48 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:48 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:48 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:48 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:48 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 30148)
+2026/07/27 10:56:48 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:48 ==================================================
+2026/07/27 10:56:48 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:48
+2026/07/27 10:56:48 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:48 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:48 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:48 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:48 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:48 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:48 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:48 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:48 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:48 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 28032)
+2026/07/27 10:56:48 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:48 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:48 ==================================================
+2026/07/27 10:56:48 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:48
+2026/07/27 10:56:48 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:48 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:48 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:48 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:48 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:48 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:48 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:48 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:48 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:48 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 21500)
+2026/07/27 10:56:48 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:49 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:49 ==================================================
+2026/07/27 10:56:49 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:49
+2026/07/27 10:56:49 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:49 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:49 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:49 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:49 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:49 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:49 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:49 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:49 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:49 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 18440)
+2026/07/27 10:56:49 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:49 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:49 ==================================================
+2026/07/27 10:56:49 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:49
+2026/07/27 10:56:49 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:49 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:49 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:49 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:49 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:49 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:49 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:49 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:49 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:49 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 4652)
+2026/07/27 10:56:49 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:49 ==================================================
+2026/07/27 10:56:49 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:49
+2026/07/27 10:56:49 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:49 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:49 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:49 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:49 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:49 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:49 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:49 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:49 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:49 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 30496)
+2026/07/27 10:56:49 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:49 ==================================================
+2026/07/27 10:56:49 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:49
+2026/07/27 10:56:49 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:49 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:49 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:49 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:49 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:49 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:49 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:49 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:49 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:49 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 6956)
+2026/07/27 10:56:49 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:49 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:50 ==================================================
+2026/07/27 10:56:50 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:50
+2026/07/27 10:56:50 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:50 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:50 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:50 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:50 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:50 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:50 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:50 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:50 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:50 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 31112)
+2026/07/27 10:56:50 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:50 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:50 ==================================================
+2026/07/27 10:56:50 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:50
+2026/07/27 10:56:50 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:50 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:50 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:50 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:50 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:50 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:50 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:50 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:50 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:50 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 31468)
+2026/07/27 10:56:50 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:50 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:50 ==================================================
+2026/07/27 10:56:50 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:50
+2026/07/27 10:56:50 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:50 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:50 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:50 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:50 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:50 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:50 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:50 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:50 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:50 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 30820)
+2026/07/27 10:56:50 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:50 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:50 ==================================================
+2026/07/27 10:56:50 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:50
+2026/07/27 10:56:50 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:50 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:50 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:50 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:50 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:50 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:50 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:50 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:50 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:50 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 31288)
+2026/07/27 10:56:50 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:50 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:50 ==================================================
+2026/07/27 10:56:50 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:50
+2026/07/27 10:56:50 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:50 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:50 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:50 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:50 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:50 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:50 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:50 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:50 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:51 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 25244)
+2026/07/27 10:56:51 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:51 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:51 ==================================================
+2026/07/27 10:56:51 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:51
+2026/07/27 10:56:51 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:51 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:51 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:51 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:51 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:51 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:51 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:51 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:51 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:51 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 24316)
+2026/07/27 10:56:51 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:51 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:51 ==================================================
+2026/07/27 10:56:51 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:51
+2026/07/27 10:56:51 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:51 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:51 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:51 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:51 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:51 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:51 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:51 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:51 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:51 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 14732)
+2026/07/27 10:56:51 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:51 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:51 ==================================================
+2026/07/27 10:56:51 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:51
+2026/07/27 10:56:51 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:51 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:51 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:51 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:51 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:51 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:51 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:51 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:51 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:51 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 16160)
+2026/07/27 10:56:51 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:51 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:51 ==================================================
+2026/07/27 10:56:51 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:51
+2026/07/27 10:56:51 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:51 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:51 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:51 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:51 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:51 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:51 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:51 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:51 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:51 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 31312)
+2026/07/27 10:56:52 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:52 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:52 ==================================================
+2026/07/27 10:56:52 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:52
+2026/07/27 10:56:52 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:52 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:52 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:52 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:52 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:52 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:52 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:52 [HuhnLite-Select] Suche ServerExec 'HuhnLite-Select.exe' -> Aufgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe'
+2026/07/27 10:56:52 [HuhnLite-Select] Starte ServerExec losgelöst: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\HuhnLite-Select.exe' mit Argumenten [-port 9000] (Dir: C:\Users\hofma\GolandProjects\HuhnLite-Select)
+2026/07/27 10:56:52 [HuhnLite-Select] ServerExec erfolgreich gestartet (PID: 31792)
+2026/07/27 10:56:52 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:52 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:52 ==================================================
+2026/07/27 10:56:52 [HuhnLite-Select] Log gestartet um 2026-07-27 10:56:52
+2026/07/27 10:56:52 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 10:56:52 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 10:56:52 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 10:56:52 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 10:56:52 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: 'HuhnLite-Select.exe')
+2026/07/27 10:56:52 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 10:56:52 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Select.exe', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 10:56:52 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:52 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:52 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:52 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:52 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:52 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:53 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:53 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:53 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:53 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:53 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:53 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:53 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:53 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:54 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:54 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:54 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:54 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:54 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:54 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:54 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:54 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:54 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:55 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:55 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:55 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:55 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:55 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:55 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:55 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:55 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 10:56:55 [HuhnLite-Select] Direkter Startmodus aktiv für http://192.168.178.100:9000. Fertig.
+2026/07/27 10:56:56 [HuhnLite-Select] Öffne Standardbrowser: http://192.168.178.100:9000
+2026/07/27 11:15:32 ==================================================
+2026/07/27 11:15:32 [HuhnLite-Select] Log gestartet um 2026-07-27 11:15:32
+2026/07/27 11:15:32 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 11:15:32 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 11:15:32 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 11:15:32 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 11:15:32 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: '')
+2026/07/27 11:15:32 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 11:15:32 [HuhnLite-Select] Konfiguriert -> ServerExec: '', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 11:15:32 [HuhnLite-Select] Settings-Select Modus (C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json). Öffne Standardbrowser: http://192.168.178.100:9000 und beende Launcher.
+2026/07/27 11:17:18 ==================================================
+2026/07/27 11:17:18 [HuhnLite-Select] Log gestartet um 2026-07-27 11:17:18
+2026/07/27 11:17:18 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 11:17:18 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 11:17:18 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 11:17:18 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/27 11:17:18 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: '')
+2026/07/27 11:17:18 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 11:17:18 [HuhnLite-Select] Konfiguriert -> ServerExec: '', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 11:17:18 [HuhnLite-Select] Settings-Select Modus (C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json). Öffne Standardbrowser: http://192.168.178.100:9000 und beende Launcher.
+2026/07/27 11:27:24 ==================================================
+2026/07/27 11:27:24 [HuhnLite-Select] Log gestartet um 2026-07-27 11:27:24
+2026/07/27 11:27:24 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/27 11:27:24 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/27 11:27:24 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/27 11:27:24 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-remote.exe'
+2026/07/27 11:27:24 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: '')
+2026/07/27 11:27:24 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/27 11:27:24 [HuhnLite-Select] Konfiguriert -> ServerExec: '', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/27 11:27:24 [HuhnLite-Select] Settings-Select Modus (C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json). Öffne Standardbrowser: http://192.168.178.100:9000 und beende Launcher.
+2026/07/31 13:20:55 ==================================================
+2026/07/31 13:20:55 [HuhnLite-Select] Log gestartet um 2026-07-31 13:20:55
+2026/07/31 13:20:55 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/07/31 13:20:55 [HuhnLite-Select] Launcher wird gestartet...
+2026/07/31 13:20:55 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/07/31 13:20:55 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/07/31 13:20:55 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: '')
+2026/07/31 13:20:55 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/07/31 13:20:55 [HuhnLite-Select] Konfiguriert -> ServerExec: '', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/07/31 13:20:55 [HuhnLite-Select] Settings-Select Modus (C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json). Öffne Standardbrowser: http://192.168.178.100:9000 und beende Launcher.

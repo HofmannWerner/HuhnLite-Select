@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+
+    <!-- Golden Rooster/Egg Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Cyan Glow & Accent Gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.15)"/>
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.03)"/>
+    </linearGradient>
+
+    <!-- Soft Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background Squircle Container -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)" filter="url(#shadow)"/>
+  <rect x="18" y="18" width="476" height="476" rx="106" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3"/>
+
+  <!-- Subtly Decorative Grid Pattern (Selector Symbolism) -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="2">
+    <line x1="128" y1="64" x2="128" y2="448"/>
+    <line x1="256" y1="64" x2="256" y2="448"/>
+    <line x1="384" y1="64" x2="384" y2="448"/>
+    <line x1="64" y1="128" x2="448" y2="128"/>
+    <line x1="64" y1="256" x2="448" y2="256"/>
+    <line x1="64" y1="384" x2="448" y2="384"/>
+  </g>
+
+  <!-- Selector Interface Ring -->
+  <circle cx="256" cy="236" r="150" fill="url(#cardGrad)" stroke="url(#cyanGrad)" stroke-width="4" stroke-dasharray="8 6" opacity="0.8"/>
+
+  <!-- Stylized Hen/Chicken & Egg Central Emblem -->
+  <g filter="url(#glow)">
+    <!-- Stylized Egg/Body Base -->
+    <path d="M 256 120 C 185 120 145 185 145 260 C 145 330 190 365 256 365 C 322 365 367 330 367 260 C 367 185 327 120 256 120 Z" fill="url(#goldGrad)"/>
+    
+    <!-- Comb (Hahnenkamm Accent) -->
+    <path d="M 235 110 C 230 90 245 78 256 88 C 265 75 280 85 278 100 C 288 95 296 110 285 120 Z" fill="#ef4444"/>
+
+    <!-- Beak -->
+    <path d="M 330 200 L 375 212 L 332 230 Z" fill="#f97316"/>
+
+    <!-- Eye -->
+    <circle cx="300" cy="195" r="10" fill="#0f172a"/>
+    <circle cx="303" cy="193" r="3" fill="#ffffff"/>
+
+    <!-- Wing Arc / Modern Cutout -->
+    <path d="M 210 230 C 230 210 270 210 290 240 C 275 280 230 280 210 230 Z" fill="rgba(255,255,255,0.25)"/>
+  </g>
+
+  <!-- Select / Multi-Tenant Badge (Grid & Arrow Badge at Bottom Right) -->
+  <g transform="translate(300, 290)" filter="url(#shadow)">
+    <!-- Badge Background -->
+    <rect x="0" y="0" width="130" height="130" rx="32" fill="#0f172a" stroke="url(#cyanGrad)" stroke-width="4"/>
+    
+    <!-- 4 Tenant Cards / Grid Icons -->
+    <rect x="22" y="22" width="38" height="38" rx="8" fill="#38bdf8" opacity="0.9"/>
+    <rect x="70" y="22" width="38" height="38" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <rect x="22" y="70" width="38" height="38" rx="8" fill="rgba(255,255,255,0.2)"/>
+    <rect x="70" y="70" width="38" height="38" rx="8" fill="#f59e0b"/>
+
+    <!-- Checkmark / Selection Pointer on Active Card -->
+    <path d="M 32 41 L 38 47 L 50 34" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

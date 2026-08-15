@@ -4,10 +4,12 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/fs"
 	"log"
 	"net"
 	"net/http"
+	"net/url"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -40,19 +42,126 @@ type Settings struct {
 }
 
 var (
-	settingsFileNames = []string{
-		"settings_server.json",
-		"settings_server_mariadb.json",
-		"Settings-server.json",
-		"settings_serv.json",
-		"settings.json",
-		"settings_select.json",
-		"Settings-select.json",
-	}
 	settings     Settings
 	settingsLock sync.RWMutex
 	loadedFile   string
 )
+
+func getExecutableVariant() string {
+	execPath, err := os.Executable()
+	if err != nil || execPath == "" {
+		if len(os.Args) > 0 {
+			execPath = os.Args[0]
+		}
+	}
+	base := filepath.Base(execPath)
+	ext := filepath.Ext(base)
+	nameWithoutExt := strings.TrimSuffix(base, ext)
+	lower := strings.ToLower(nameWithoutExt)
+
+	// 1. Spezifische Datenbank-Keywords prüfen
+	if strings.Contains(lower, "mariadb") {
+		return "mariadb"
+	}
+	if strings.Contains(lower, "postgres") || strings.Contains(lower, "pgsql") {
+		return "postgres"
+	}
+	if strings.Contains(lower, "sqlite") {
+		return "sqlite"
+	}
+
+	// 2. Generische Suffixe nach Präfixen prüfen (z.B. HuhnLite-Select-XYZ)
+	for _, prefix := range []string{
+		"huhnlite-select-", "huhnlite-select_", "huhnlite_select-", "huhnlite_select_",
+		"huhnlite-", "huhnlite_", "select-", "select_",
+	} {
+		if strings.HasPrefix(lower, prefix) {
+			suffix := strings.TrimPrefix(lower, prefix)
+			if suffix != "" {
+				return suffix
+			}
+		}
+	}
+
+	// 3. Fallback: Trennzeichen '-' oder '_'
+	if idx := strings.LastIndexAny(nameWithoutExt, "-_"); idx != -1 && idx < len(nameWithoutExt)-1 {
+		part := strings.ToLower(nameWithoutExt[idx+1:])
+		switch part {
+		case "select", "launcher", "remote", "windows", "linux", "darwin", "amd64", "arm64", "x86", "x64", "386", "exe":
+			// Keine DB-Variante
+		default:
+			return part
+		}
+	}
+
+	return ""
+}
+
+func getSettingsFileCandidates(variant string) []string {
+	var candidates []string
+
+	if variant != "" {
+		vLower := strings.ToLower(variant)
+		variants := []string{vLower}
+		if vLower == "postgres" {
+			variants = append(variants, "postgresql")
+		} else if vLower == "postgresql" {
+			variants = append(variants, "postgres")
+		}
+
+		for _, v := range variants {
+			candidates = append(candidates,
+				fmt.Sprintf("settings_server_%s.json", v),
+				fmt.Sprintf("settings_select_%s.json", v),
+				fmt.Sprintf("settings_server-%s.json", v),
+				fmt.Sprintf("settings-server-%s.json", v),
+				fmt.Sprintf("settings_select-%s.json", v),
+				fmt.Sprintf("settings-select-%s.json", v),
+				fmt.Sprintf("settings_%s.json", v),
+				fmt.Sprintf("settings-%s.json", v),
+				fmt.Sprintf("Settings_server_%s.json", v),
+				fmt.Sprintf("Settings_select_%s.json", v),
+				fmt.Sprintf("Settings-%s.json", v),
+			)
+		}
+	}
+
+	// Standard-Fallbacks
+	fallbacks := []string{
+		"settings_select.json",
+		"Settings_select.json",
+		"Settings-select.json",
+		"settings-select.json",
+		"settings_server.json",
+		"Settings_server.json",
+		"Settings-server.json",
+		"settings_serv.json",
+		"settings.json",
+	}
+
+	for _, f := range fallbacks {
+		found := false
+		for _, c := range candidates {
+			if strings.EqualFold(c, f) {
+				found = true
+				break
+			}
+		}
+		if !found {
+			candidates = append(candidates, f)
+		}
+	}
+
+	return candidates
+}
+
+func isSelectSettingsFile(filePath string) bool {
+	if filePath == "" {
+		return false
+	}
+	base := strings.ToLower(filepath.Base(filePath))
+	return strings.HasPrefix(base, "settings_select") || strings.HasPrefix(base, "settings-select")
+}
 
 type SessionTracker struct {
 	sync.Mutex
@@ -115,18 +224,10 @@ func hasActiveMandanten() bool {
 	return false
 }
 
-
 func findSettingsFile() string {
-	configDir, err := os.UserConfigDir()
 	var searchDirs []string
 
-	// 1. Priorität: %APPDATA%/HuhnLite
-	if err == nil {
-		appDataDir := filepath.Join(configDir, "HuhnLite")
-		searchDirs = append(searchDirs, appDataDir)
-	}
-
-	// 2. Fallback: CWD & Executable-Ordner
+	// 1. Priorität: CWD & Executable-Ordner (lokales Aufrufverzeichnis)
 	cwd, _ := os.Getwd()
 	if cwd != "" {
 		searchDirs = append(searchDirs, cwd)
@@ -139,7 +240,17 @@ func findSettingsFile() string {
 		}
 	}
 
-	for _, fileName := range settingsFileNames {
+	// 2. Fallback: %APPDATA%/HuhnLite
+	configDir, err := os.UserConfigDir()
+	if err == nil {
+		appDataDir := filepath.Join(configDir, "HuhnLite")
+		searchDirs = append(searchDirs, appDataDir)
+	}
+
+	variant := getExecutableVariant()
+	candidates := getSettingsFileCandidates(variant)
+
+	for _, fileName := range candidates {
 		for _, dir := range searchDirs {
 			p := filepath.Join(dir, fileName)
 			if _, err := os.Stat(p); err == nil {
@@ -190,7 +301,9 @@ func loadSettings() error {
 
 	targetFile := findSettingsFile()
 	if targetFile == "" {
-		return fmt.Errorf("keine Settings-Datei (%s) gefunden", strings.Join(settingsFileNames, ", "))
+		variant := getExecutableVariant()
+		candidates := getSettingsFileCandidates(variant)
+		return fmt.Errorf("keine Settings-Datei (%s) gefunden", strings.Join(candidates, ", "))
 	}
 
 	data, err := os.ReadFile(targetFile)
@@ -331,12 +444,168 @@ func openBrowser(rawURL string) error {
 	return cmd.Start()
 }
 
+func resolveServerExec(serverExec string) string {
+	execName := strings.Trim(strings.TrimSpace(serverExec), "\"'")
+	// If execName has a stray % prefix not followed by ProgramFiles, trim it
+	if strings.HasPrefix(execName, "%") && !strings.HasPrefix(strings.ToLower(execName), "%programfiles%") {
+		execName = strings.TrimPrefix(execName, "%")
+	}
+	if strings.HasPrefix(strings.ToLower(execName), "%programfiles%") {
+		pf := os.Getenv("ProgramFiles")
+		execName = strings.Replace(execName, "%programfiles%", pf, 1)
+		execName = strings.Replace(execName, "%PROGRAMFILES%", pf, 1)
+	}
+
+	variant := getExecutableVariant()
+
+	if !filepath.IsAbs(execName) {
+		cwd, _ := os.Getwd()
+		execDir := ""
+		if execPath, err := os.Executable(); err == nil {
+			execDir = filepath.Dir(execPath)
+		}
+
+		var candidates []string
+		if execName != "" {
+			candidates = append(candidates, execName, filepath.Join(cwd, execName))
+			if execDir != "" && execDir != cwd {
+				candidates = append(candidates, filepath.Join(execDir, execName))
+			}
+			candidates = append(candidates, filepath.Join("C:\\Program Files\\HuhnLite", execName))
+		}
+
+		// Suffix-spezifische Server-Executables bevorzugen, falls Variante ermittelt wurde
+		if variant != "" {
+			vTitle := strings.ToUpper(variant[:1]) + strings.ToLower(variant[1:])
+			if strings.EqualFold(variant, "mariadb") {
+				vTitle = "MariaDB"
+			} else if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
+				vTitle = "Postgres"
+			}
+
+			variantNames := []string{
+				fmt.Sprintf("HuhnLite-Server-%s.exe", vTitle),
+				fmt.Sprintf("huhnlite-server-%s.exe", strings.ToLower(variant)),
+				fmt.Sprintf("HuhnLite-Server-%s", vTitle),
+				fmt.Sprintf("huhnlite-server-%s", strings.ToLower(variant)),
+			}
+			if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
+				variantNames = append(variantNames,
+					"HuhnLite-Server-PostgreSQL.exe",
+					"huhnlite-server-postgresql.exe",
+					"HuhnLite-Server-PostgreSQL",
+					"huhnlite-server-postgresql",
+				)
+			}
+
+			for _, vn := range variantNames {
+				candidates = append(candidates,
+					vn,
+					filepath.Join(cwd, vn),
+				)
+				if execDir != "" && execDir != cwd {
+					candidates = append(candidates, filepath.Join(execDir, vn))
+				}
+				candidates = append(candidates, filepath.Join("C:\\Program Files\\HuhnLite", vn))
+			}
+		}
+
+		// Generische Fallbacks
+		candidates = append(candidates,
+			"HuhnLite-Server.exe",
+			filepath.Join("C:\\Program Files\\HuhnLite", "HuhnLite-Server.exe"),
+			filepath.Join("C:\\Program Files\\HuhnLite", "huhnlite-wails.exe"),
+			"huhnlite-wails.exe",
+		)
+
+		for _, cand := range candidates {
+			if _, err := os.Stat(cand); err == nil {
+				if absCand, errAbs := filepath.Abs(cand); errAbs == nil {
+					return absCand
+				}
+				return cand
+			}
+		}
+	}
+	return execName
+}
+
+func initLogging() *os.File {
+	cwd, _ := os.Getwd()
+	variant := getExecutableVariant()
+	logFileName := "huhnlite_select.log"
+	if variant != "" {
+		logFileName = fmt.Sprintf("huhnlite_select_%s.log", strings.ToLower(variant))
+	}
+	logPath := filepath.Join(cwd, logFileName)
+
+	f, err := os.OpenFile(logPath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		if configDir, errConfig := os.UserConfigDir(); errConfig == nil {
+			appDataDir := filepath.Join(configDir, "HuhnLite")
+			_ = os.MkdirAll(appDataDir, 0755)
+			logPath = filepath.Join(appDataDir, logFileName)
+			f, err = os.OpenFile(logPath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+		}
+	}
+
+	if err == nil && f != nil {
+		mw := io.MultiWriter(os.Stdout, f)
+		log.SetOutput(mw)
+		log.Println("==================================================")
+		log.Printf("[HuhnLite-Select] Log gestartet um %s", time.Now().Format("2006-01-02 15:04:05"))
+		log.Printf("[HuhnLite-Select] Log-Datei: %s", logPath)
+		return f
+	}
+	return nil
+}
+
+func parsePortFromURL(rawURL string) int {
+	target := strings.TrimSpace(rawURL)
+	if target == "" {
+		return 0
+	}
+	u, err := url.Parse(target)
+	if err != nil || u.Host == "" {
+		if !strings.HasPrefix(target, "http://") && !strings.HasPrefix(target, "https://") {
+			u, err = url.Parse("http://" + target)
+		}
+	}
+	if err == nil && u != nil && u.Host != "" {
+		hostStr := u.Host
+		if _, portStr, err := net.SplitHostPort(hostStr); err == nil {
+			if p, err := strconv.Atoi(portStr); err == nil && p > 0 {
+				return p
+			}
+		}
+	}
+	return 0
+}
+
 func main() {
+	logFile := initLogging()
+	if logFile != nil {
+		defer logFile.Close()
+	}
+
 	log.Println("[HuhnLite-Select] Launcher wird gestartet...")
+
+	cwd, _ := os.Getwd()
+	execPath, _ := os.Executable()
+	variant := getExecutableVariant()
+	log.Printf("[HuhnLite-Select] CWD: '%s'", cwd)
+	log.Printf("[HuhnLite-Select] Executable: '%s'", execPath)
+	if variant != "" {
+		log.Printf("[HuhnLite-Select] Erkannte Server/DB-Variante: '%s'", variant)
+	}
 
 	// 1. Settings laden
 	if err := loadSettings(); err != nil {
 		log.Printf("Warnung beim Laden der Settings: %v\n", err)
+	} else {
+		log.Printf("[HuhnLite-Select] Geladene Datei: %s", loadedFile)
+		log.Printf("[HuhnLite-Select] Konfiguriert -> ServerExec: '%s', BaseLink: '%s', BasePort: %d, Mandanten: %d",
+			settings.ServerExec, settings.BaseLink, settings.BasePort, len(settings.Mandanten))
 	}
 
 	port := 8080
@@ -349,16 +618,33 @@ func main() {
 		targetURL = fmt.Sprintf("http://localhost:%d", port)
 	}
 
-	// Falls bereits eine Instanz auf dem Port läuft: Browser öffnen und sanft beenden
-	if isPortOpen(port) {
-		log.Printf("[HuhnLite-Select] Port %d bereits aktiv. Öffne Browser: %s\n", port, targetURL)
+	urlPort := parsePortFromURL(targetURL)
+	if urlPort > 0 {
+		port = urlPort
+	}
+
+	// 2. Falls eine Select-Settings-Datei geladen wurde (z.B. settings_select.json / Settings_select.json):
+	// Nur den Standardbrowser mit BaseLink öffnen und das Programm sofort beenden.
+	if isSelectSettingsFile(loadedFile) {
+		log.Printf("[HuhnLite-Select] Settings-Select Modus (%s). Öffne Standardbrowser: %s und beende Launcher.\n", loadedFile, targetURL)
 		if err := openBrowser(targetURL); err != nil {
-			log.Printf("Fehler beim Öffnen des Browsers: %v\n", err)
+			log.Printf("[HuhnLite-Select] Fehler beim Öffnen des Browsers: %v\n", err)
 		}
+		time.Sleep(500 * time.Millisecond)
 		return
 	}
 
-	// 2. HTTP Server Router
+	// 3. Falls bereits eine Instanz auf dem Port läuft: Browser öffnen und beenden
+	if isPortOpen(port) {
+		log.Printf("[HuhnLite-Select] Port %d bereits aktiv. Öffne Browser: %s\n", port, targetURL)
+		if err := openBrowser(targetURL); err != nil {
+			log.Printf("[HuhnLite-Select] Fehler beim Öffnen des Browsers: %v\n", err)
+		}
+		time.Sleep(500 * time.Millisecond)
+		return
+	}
+
+	// 4. HTTP Server Router (Mandanten-Auswähler UI)
 	mux := http.NewServeMux()
 
 	// API Endpunkte
@@ -381,7 +667,7 @@ func main() {
 		fileServer.ServeHTTP(w, r)
 	})
 
-	// 3. Standardbrowser automatisch aufrufen
+	// Standardbrowser automatisch aufrufen
 	go func() {
 		time.Sleep(150 * time.Millisecond)
 		log.Printf("[HuhnLite-Select] Öffne Standardbrowser: %s\n", targetURL)
@@ -477,37 +763,7 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	execName := "HuhnLite-Server.exe"
-	if serverExec != "" {
-		execName = strings.Trim(strings.TrimSpace(serverExec), "\"'")
-		// Fallback for Windows environment variables like %programfiles%
-		if strings.HasPrefix(strings.ToLower(execName), "%programfiles%") {
-			pf := os.Getenv("ProgramFiles")
-			execName = strings.Replace(execName, "%programfiles%", pf, 1)
-			execName = strings.Replace(execName, "%PROGRAMFILES%", pf, 1)
-		}
-	}
-
-	// Falls relativer Pfad oder nur Dateiname, prüfe Fallbacks
-	if !filepath.IsAbs(execName) {
-		candidates := []string{
-			execName,
-			filepath.Join("C:\\Program Files\\HuhnLite", execName),
-			filepath.Join("C:\\Program Files\\HuhnLite", "HuhnLite-Server.exe"),
-			filepath.Join("C:\\Program Files\\HuhnLite", "huhnlite-wails.exe"),
-			"huhnlite-wails.exe",
-		}
-		for _, cand := range candidates {
-			if _, err := os.Stat(cand); err == nil {
-				if absCand, errAbs := filepath.Abs(cand); errAbs == nil {
-					execName = absCand
-				} else {
-					execName = cand
-				}
-				break
-			}
-		}
-	}
+	execName := resolveServerExec(serverExec)
 
 	lang := r.URL.Query().Get("lng")
 	if lang == "" {
