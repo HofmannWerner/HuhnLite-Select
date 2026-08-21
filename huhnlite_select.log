@@ -1104,3 +1104,32 @@
 2026/07/31 13:20:55 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
 2026/07/31 13:20:55 [HuhnLite-Select] Konfiguriert -> ServerExec: '', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
 2026/07/31 13:20:55 [HuhnLite-Select] Settings-Select Modus (C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json). Öffne Standardbrowser: http://192.168.178.100:9000 und beende Launcher.
+2026/08/21 11:42:06 ==================================================
+2026/08/21 11:42:06 [HuhnLite-Select] Log gestartet um 2026-08-21 11:42:06
+2026/08/21 11:42:06 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/08/21 11:42:06 [HuhnLite-Select] Launcher wird gestartet...
+2026/08/21 11:42:06 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/08/21 11:42:06 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/08/21 11:42:06 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: '', BasePort: 0)
+2026/08/21 11:42:06 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/08/21 11:42:06 [HuhnLite-Select] Konfiguriert -> ServerExec: '', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/08/21 11:42:06 [HuhnLite-Select] Szenario 1 (Remote-Modus aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json). Öffne Standardbrowser: http://192.168.178.100:9000 und beende Anwendung.
+2026/08/21 11:46:25 ==================================================
+2026/08/21 11:46:25 [HuhnLite-Select] Log gestartet um 2026-08-21 11:46:25
+2026/08/21 11:46:25 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/08/21 11:46:25 [HuhnLite-Select] Launcher wird gestartet...
+2026/08/21 11:46:25 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/08/21 11:46:25 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/08/21 11:46:25 [HuhnLite-Select] FEHLER beim Laden der Settings: Fehler beim Parsen von C:\Users\hofma\AppData\Roaming\HuhnLite\settings_server.json: invalid character ';' after object key:value pair. Anwendung bricht ab.
+2026/08/21 11:46:29 ==================================================
+2026/08/21 11:46:29 [HuhnLite-Select] Log gestartet um 2026-08-21 11:46:29
+2026/08/21 11:46:29 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select.log
+2026/08/21 11:46:29 [HuhnLite-Select] Launcher wird gestartet...
+2026/08/21 11:46:29 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/08/21 11:46:29 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/08/21 11:46:29 Settings geladen aus C:\Users\hofma\AppData\Roaming\HuhnLite\settings_server.json (2 Mandanten, ServerExec: 'HuhnLite-Server.exe', BasePort: 9000)
+2026/08/21 11:46:29 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\AppData\Roaming\HuhnLite\settings_server.json
+2026/08/21 11:46:29 [HuhnLite-Select] Konfiguriert -> ServerExec: 'HuhnLite-Server.exe', BaseLink: 'http://localhost:9000', BasePort: 9000, Mandanten: 2
+2026/08/21 11:46:29 [HuhnLite-Select] Launcher läuft unter http://localhost:9000
+2026/08/21 11:46:29 [HuhnLite-Select] Öffne Standardbrowser: http://localhost:9000
+2026/08/21 11:46:30 Settings geladen aus C:\Users\hofma\AppData\Roaming\HuhnLite\settings_server.json (2 Mandanten, ServerExec: 'HuhnLite-Server.exe', BasePort: 9000)

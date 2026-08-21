@@ -44,22 +44,26 @@ HuhnLite-Select erkennt anhand seines **eigenen Dateinamens** automatisch, welch
 
 | Dateiname der Anwendung | Suchreihenfolge der Settings-Dateien | Standard-Server-Executable |
 | :--- | :--- | :--- |
-| **`HuhnLite-Select-MariaDB.exe`** | 1. `settings_server_mariadb.json`<br>2. `settings_select_mariadb.json`<br>3. `settings_server.json` / `settings.json` | `HuhnLite-Server-MariaDB.exe`<br>*(Fallback: `HuhnLite-Server.exe`)* |
-| **`HuhnLite-Select-Postgres.exe`** | 1. `settings_server_postgres.json`<br>2. `settings_select_postgres.json`<br>3. `settings_server.json` / `settings.json` | `HuhnLite-Server-Postgres.exe`<br>*(Fallback: `HuhnLite-Server.exe`)* |
-| **`HuhnLite-Select.exe`** *(Standard)* | 1. `settings_select.json`<br>2. `settings_server.json`<br>3. `settings.json` | `HuhnLite-Server.exe` |
+| **`HuhnLite-Select-MariaDB.exe`** | 1. `settings-server-mariadb.json`<br>2. `settings_server_mariadb.json`<br>3. `settings_select_mariadb.json`<br>4. `settings-server.json` / `settings.json` | `HuhnLite-Server-MariaDB.exe`<br>*(Fallback: `HuhnLite-Server.exe`)* |
+| **`HuhnLite-Select-Postgres.exe`** | 1. `settings-server-postgres.json`<br>2. `settings_server_postgres.json`<br>3. `settings_select_postgres.json`<br>4. `settings-server.json` / `settings.json` | `HuhnLite-Server-Postgres.exe`<br>*(Fallback: `HuhnLite-Server.exe`)* |
+| **`HuhnLite-Select.exe`** *(Standard)* | 1. `settings-server.json`<br>2. `settings_select.json`<br>3. `settings_server.json`<br>4. `settings.json` | `HuhnLite-Server.exe` |
 
 ### Suchpfade für Konfigurationsdateien:
 1. **Aktuelles Verzeichnis (CWD)** & Anwendungsordner der `.exe`
 2. **`%APPDATA%\HuhnLite\`** (Benutzerkonfiguration)
 
-Beispiel einer `settings_server.json` / `settings_server_mariadb.json`:
+Beispiel einer `settings_server.json` / `settings-server-mariadb.json`:
 
 ```json
 {
   "serverExec": "HuhnLite-Server-MariaDB.exe",
-  "basePort": 8080,
-  "baseLink": "http://localhost:8080",
-  "db_engine": "mariadb",
+  "basePort": 9000,
+  "baseLink": "http://localhost:9000",
+  "db_engine": "mysql",
+  "db_connection": "root:studio@tcp(127.0.0.1:3307)/huhnlite-prod?parseTime=true&allowNativePasswords=true",
+  "db_connection_test": "root:studio@tcp(127.0.0.1:3307)/huhnlite-test?parseTime=true&allowNativePasswords=true",
+  "db_connection_1": "root:studio@tcp(127.0.0.1:3307)/huhnlite-prod?parseTime=true&allowNativePasswords=true",
+  "db_connection_2": "root:studio@tcp(127.0.0.1:3307)/huhnlite-prod-2?parseTime=true&allowNativePasswords=true",
   "mandant_1": "Otto Dotter",
   "mandant_2": "Gustav Hahn"
 }

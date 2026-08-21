@@ -174,7 +174,8 @@ const app = createApp({
       
       try {
         const lang = currentLanguage.value || 'de';
-        const res = await fetch(`/api/start?mandantId=${mandant.id}&lng=${lang}&lang=${lang}&language=${lang}`);
+        const isDark = darkMode.value ? 'true' : 'false';
+        const res = await fetch(`/api/start?mandantId=${mandant.id}&lng=${lang}&lang=${lang}&language=${lang}&darkmode=${isDark}&dark=${isDark}`);
         const data = await res.json();
 
         if (res.ok && data.success) {

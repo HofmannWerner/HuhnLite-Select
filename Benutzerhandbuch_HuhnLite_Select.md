@@ -14,15 +14,22 @@ Das Programm fungiert als schlanker Webserver mit einer modernen, eingebetteten 
 
 ## Hauptfunktionen
 
-### 1. Mandanten-Verwaltung & Multi-Server-Erkennung
-* **Automatische Erkennung & Multi-Datenbank-Support:** Das Programm erkennt anhand seines eigenen Dateinamens (z. B. `HuhnLite-Select-MariaDB.exe` oder `HuhnLite-Select-Postgres.exe`) automatisch, welche Servervariante und welche Einstellungsdatei (`settings_server_mariadb.json`, `settings_server_postgres.json` bzw. `settings_server.json` / `settings_select.json`) geladen werden soll.
-* **Status-Prüfung:** Der Launcher prüft in Echtzeit (via Port-Scan), ob der Server für einen bestimmten Mandanten bereits im Hintergrund läuft (Status: *Aktiv* / *Inaktiv*).
-* **Dynamischer Start:** Wird ein inaktiver Mandant ausgewählt, startet HuhnLite-Select automatisch den zugehörigen HuhnLite-Server-Prozess mit den korrekten Startparametern (Port und Mandanten-ID) und leitet den Benutzer anschließend direkt zur entsprechenden Anwendungsoberfläche weiter.
+### 1. Szenarien & Funktionsweise
+* **Szenario 1 (Remote-Weiterleitung):** Existiert eine `settings_select.json`, liest HuhnLite-Select die Informationen (IP-Adresse und Port bzw. `baseLink`), öffnet automatisch den Browser mit der Zieladresse und beendet sich unmittelbar danach ("verabschiedet sich").
+* **Szenario 2 (Standard & MariaDB):**
+  * `HuhnLite-Select.exe` sucht nach `settings_server.json` (im Aufrufverzeichnis und alternativ im Roaming-Verzeichnis `%APPDATA%/HuhnLite`).
+  * `HuhnLite-Select-Mariadb.exe` sucht nach `settings_server_mariadb.json` (im Aufrufverzeichnis und alternativ im Roaming-Verzeichnis `%APPDATA%/HuhnLite-MariaDB`).
+* **Szenario 3 (Postgres):**
+  * `HuhnLite-Select-Postgres.exe` sucht nach `settings_server_postgres.json` (im Aufrufverzeichnis und alternativ im Roaming-Verzeichnis `%APPDATA%/HuhnLite-Postgres`).
 
-### 2. Moderne & anpassbare Oberfläche
-* **Mehrsprachigkeit:** Die Benutzeroberfläche kann nahtlos zwischen **Deutsch, Englisch und Italienisch** umgeschaltet werden. Die gewählte Sprache wird für zukünftige Starts gespeichert.
-* **Dark Mode:** Ein integrierter Tag-/Nachtmodus (Light/Dark Mode) schont die Augen in dunklen Arbeitsumgebungen und sorgt für ein modernes Erscheinungsbild.
-* **Klarheit & Design:** Eine übersichtliche Kachel-Ansicht (Cards) sorgt dafür, dass sofort ersichtlich ist, welche Mandanten zur Verfügung stehen und welche gerade aktiv genutzt werden.
+### 2. Saubere Trennung & Strikte Übergabeparameter
+* **Aufgaben von HuhnLite-Select:** Das Select-Programm liest aus den Settings ausschließlich `basePort`, `serverExec` und die Mandanten-Liste (zur Anzeige in der Weboberfläche).
+* **Übergabe an die Server-Anwendung:** Beim Klick auf einen Mandanten startet HuhnLite-Select die konfigurierte `serverExec` mit **ausschließlich** folgenden Parametern:
+  * `-port <basePort + mandantNr>`
+  * `-darkmode <true|false>`
+  * `-language <de|en|it>` (bzw. `-lng`)
+* **Eigenständigkeit des Server-Programms:** Alle weiteren Einstellungen (Datenbankverbindungen, Engines, Backups, etc.) liest das Server-Programm selbstständig aus seiner eigenen Konfigurationsdatei.
+* **Fehlerbehandlung:** Bei fehlenden oder ungültigen Einstellungen in den Settings bricht HuhnLite-Select sofort kontrolliert mit einer entsprechenden Fehlermeldung ab.
 
 ---
 

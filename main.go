@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"embed"
 	"encoding/json"
 	"fmt"
@@ -38,6 +39,8 @@ type Settings struct {
 	ServerExec string    `json:"serverExec"`
 	BasePort   int       `json:"basePort"`
 	BaseLink   string    `json:"baseLink"`
+	IP         string    `json:"ip"`
+	Port       int       `json:"port"`
 	Mandanten  []Mandant `json:"mandanten"`
 }
 
@@ -78,7 +81,12 @@ func getExecutableVariant() string {
 		if strings.HasPrefix(lower, prefix) {
 			suffix := strings.TrimPrefix(lower, prefix)
 			if suffix != "" {
-				return suffix
+				switch suffix {
+				case "select", "launcher", "remote", "windows", "linux", "darwin", "amd64", "arm64", "x86", "x64", "386", "exe":
+					// Keine DB-Variante
+				default:
+					return suffix
+				}
 			}
 		}
 	}
@@ -109,50 +117,64 @@ func getSettingsFileCandidates(variant string) []string {
 			variants = append(variants, "postgres")
 		}
 
+		// Szenario 1: Optionale Weiterleitungs-Settings
+		for _, v := range variants {
+			candidates = append(candidates,
+				fmt.Sprintf("settings_select_%s.json", v),
+				fmt.Sprintf("settings-select-%s.json", v),
+				fmt.Sprintf("Settings_select_%s.json", v),
+				fmt.Sprintf("Settings-select-%s.json", v),
+			)
+		}
+		candidates = append(candidates,
+			"settings_select.json",
+			"settings-select.json",
+			"Settings_select.json",
+			"Settings-select.json",
+		)
+
+		// Szenario 2 & 3: Spezifische Server-Settings (settings_server_mariadb.json / settings_server_postgres.json)
 		for _, v := range variants {
 			candidates = append(candidates,
 				fmt.Sprintf("settings_server_%s.json", v),
-				fmt.Sprintf("settings_select_%s.json", v),
-				fmt.Sprintf("settings_server-%s.json", v),
 				fmt.Sprintf("settings-server-%s.json", v),
-				fmt.Sprintf("settings_select-%s.json", v),
-				fmt.Sprintf("settings-select-%s.json", v),
+				fmt.Sprintf("Settings_server_%s.json", v),
+				fmt.Sprintf("Settings-server-%s.json", v),
 				fmt.Sprintf("settings_%s.json", v),
 				fmt.Sprintf("settings-%s.json", v),
-				fmt.Sprintf("Settings_server_%s.json", v),
-				fmt.Sprintf("Settings_select_%s.json", v),
-				fmt.Sprintf("Settings-%s.json", v),
 			)
 		}
+		candidates = append(candidates,
+			"settings_server.json",
+			"settings-server.json",
+			"settings.json",
+		)
+	} else {
+		// Standard für HuhnLite-Select.exe: settings_select.json (Szenario 1) oder settings_server.json (Szenario 2)
+		candidates = append(candidates,
+			"settings_select.json",
+			"settings-select.json",
+			"Settings_select.json",
+			"Settings-select.json",
+			"settings_server.json",
+			"settings-server.json",
+			"Settings_server.json",
+			"Settings-server.json",
+			"settings.json",
+		)
 	}
 
-	// Standard-Fallbacks
-	fallbacks := []string{
-		"settings_select.json",
-		"Settings_select.json",
-		"Settings-select.json",
-		"settings-select.json",
-		"settings_server.json",
-		"Settings_server.json",
-		"Settings-server.json",
-		"settings_serv.json",
-		"settings.json",
-	}
-
-	for _, f := range fallbacks {
-		found := false
-		for _, c := range candidates {
-			if strings.EqualFold(c, f) {
-				found = true
-				break
-			}
+	// Duplikate filtern
+	var unique []string
+	seen := make(map[string]bool)
+	for _, c := range candidates {
+		cLower := strings.ToLower(c)
+		if !seen[cLower] {
+			seen[cLower] = true
+			unique = append(unique, c)
 		}
-		if !found {
-			candidates = append(candidates, f)
-		}
 	}
-
-	return candidates
+	return unique
 }
 
 func isSelectSettingsFile(filePath string) bool {
@@ -161,6 +183,48 @@ func isSelectSettingsFile(filePath string) bool {
 	}
 	base := strings.ToLower(filepath.Base(filePath))
 	return strings.HasPrefix(base, "settings_select") || strings.HasPrefix(base, "settings-select")
+}
+
+func isRemoteMode() bool {
+	settingsLock.RLock()
+	defer settingsLock.RUnlock()
+
+	// Wenn eine settings_select*.json geladen wurde -> Szenario 1
+	if isSelectSettingsFile(loadedFile) {
+		return true
+	}
+
+	// Reiner Remote-Modus: Keine ServerExec und keine Mandanten konfiguriert, aber IP/Port oder BaseLink vorhanden
+	if strings.TrimSpace(settings.ServerExec) == "" && len(settings.Mandanten) == 0 {
+		if strings.TrimSpace(settings.BaseLink) != "" || (strings.TrimSpace(settings.IP) != "" && (settings.Port > 0 || settings.BasePort > 0)) {
+			return true
+		}
+	}
+	return false
+}
+
+func getRemoteTargetURL() string {
+	settingsLock.RLock()
+	defer settingsLock.RUnlock()
+
+	if strings.TrimSpace(settings.BaseLink) != "" {
+		link := strings.TrimSpace(settings.BaseLink)
+		if !strings.HasPrefix(link, "http://") && !strings.HasPrefix(link, "https://") {
+			link = "http://" + link
+		}
+		return link
+	}
+	if strings.TrimSpace(settings.IP) != "" {
+		port := settings.Port
+		if port == 0 {
+			port = settings.BasePort
+		}
+		if port == 0 {
+			port = 8080
+		}
+		return fmt.Sprintf("http://%s:%d", settings.IP, port)
+	}
+	return "http://localhost:8080"
 }
 
 type SessionTracker struct {
@@ -224,6 +288,65 @@ func hasActiveMandanten() bool {
 	return false
 }
 
+func deriveMandantDBConn(baseConn string, mandantNr int) string {
+	baseConn = strings.TrimSpace(baseConn)
+	if baseConn == "" {
+		return ""
+	}
+	suffix := fmt.Sprintf("-%d", mandantNr)
+
+	parts := strings.SplitN(baseConn, "?", 2)
+	mainPath := parts[0]
+	queryStr := ""
+	if len(parts) > 1 {
+		queryStr = "?" + parts[1]
+	}
+
+	slashIdx := strings.LastIndex(mainPath, "/")
+	if slashIdx != -1 {
+		dbName := mainPath[slashIdx+1:]
+		if dbName != "" && !strings.HasSuffix(dbName, suffix) {
+			dbNameWithSuffix := dbName + suffix
+			return mainPath[:slashIdx+1] + dbNameWithSuffix + queryStr
+		}
+	}
+	return baseConn
+}
+
+func getAppDataDir() string {
+	configDir, err := os.UserConfigDir()
+	if err != nil {
+		return ""
+	}
+	variant := getExecutableVariant()
+	if variant != "" {
+		vTitle := strings.ToUpper(variant[:1]) + strings.ToLower(variant[1:])
+		if strings.EqualFold(variant, "mariadb") {
+			vTitle = "MariaDB"
+		} else if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
+			vTitle = "Postgres"
+		}
+
+		candidates := []string{
+			filepath.Join(configDir, fmt.Sprintf("HuhnLite-%s", vTitle)),
+			filepath.Join(configDir, fmt.Sprintf("HuhnLite-%s", strings.ToLower(variant))),
+		}
+		if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
+			candidates = append(candidates,
+				filepath.Join(configDir, "HuhnLite-PostgreSQL"),
+				filepath.Join(configDir, "HuhnLite-postgresql"),
+			)
+		}
+		for _, cand := range candidates {
+			if _, err := os.Stat(cand); err == nil {
+				return cand
+			}
+		}
+		return candidates[0]
+	}
+	return filepath.Join(configDir, "HuhnLite")
+}
+
 func findSettingsFile() string {
 	var searchDirs []string
 
@@ -240,18 +363,47 @@ func findSettingsFile() string {
 		}
 	}
 
-	// 2. Fallback: %APPDATA%/HuhnLite
-	configDir, err := os.UserConfigDir()
-	if err == nil {
-		appDataDir := filepath.Join(configDir, "HuhnLite")
-		searchDirs = append(searchDirs, appDataDir)
+	// 2. Fallback: %APPDATA%/HuhnLite-<Variant> & %APPDATA%/HuhnLite
+	if configDir, err := os.UserConfigDir(); err == nil {
+		variant := getExecutableVariant()
+		if variant != "" {
+			vTitle := strings.ToUpper(variant[:1]) + strings.ToLower(variant[1:])
+			if strings.EqualFold(variant, "mariadb") {
+				vTitle = "MariaDB"
+			} else if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
+				vTitle = "Postgres"
+			}
+			searchDirs = append(searchDirs,
+				filepath.Join(configDir, fmt.Sprintf("HuhnLite-%s", vTitle)),
+				filepath.Join(configDir, fmt.Sprintf("HuhnLite-%s", strings.ToLower(variant))),
+			)
+			if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
+				searchDirs = append(searchDirs,
+					filepath.Join(configDir, "HuhnLite-PostgreSQL"),
+					filepath.Join(configDir, "HuhnLite-postgresql"),
+				)
+			}
+		}
+		appDataGeneric := filepath.Join(configDir, "HuhnLite")
+		searchDirs = append(searchDirs, appDataGeneric)
+	}
+
+	// Duplikate entfernen
+	var uniqueSearchDirs []string
+	seenDirs := make(map[string]bool)
+	for _, d := range searchDirs {
+		clean := filepath.Clean(d)
+		if !seenDirs[strings.ToLower(clean)] {
+			seenDirs[strings.ToLower(clean)] = true
+			uniqueSearchDirs = append(uniqueSearchDirs, clean)
+		}
 	}
 
 	variant := getExecutableVariant()
 	candidates := getSettingsFileCandidates(variant)
 
 	for _, fileName := range candidates {
-		for _, dir := range searchDirs {
+		for _, dir := range uniqueSearchDirs {
 			p := filepath.Join(dir, fileName)
 			if _, err := os.Stat(p); err == nil {
 				return p
@@ -259,40 +411,6 @@ func findSettingsFile() string {
 		}
 	}
 	return ""
-}
-
-func sanitizeJSONBackslashes(data []byte) []byte {
-	str := string(data)
-	var buf strings.Builder
-	inString := false
-	escaped := false
-	for i := 0; i < len(str); i++ {
-		ch := str[i]
-		if escaped {
-			buf.WriteByte(ch)
-			escaped = false
-			continue
-		}
-		if ch == '"' {
-			inString = !inString
-			buf.WriteByte(ch)
-			continue
-		}
-		if inString && ch == '\\' {
-			if i+1 < len(str) {
-				next := str[i+1]
-				if next == '"' || next == '\\' || next == '/' || next == 'b' || next == 'f' || next == 'n' || next == 'r' || next == 't' || next == 'u' {
-					buf.WriteByte(ch)
-					escaped = true
-					continue
-				}
-			}
-			buf.WriteString("\\\\")
-			continue
-		}
-		buf.WriteByte(ch)
-	}
-	return []byte(buf.String())
 }
 
 func loadSettings() error {
@@ -303,7 +421,7 @@ func loadSettings() error {
 	if targetFile == "" {
 		variant := getExecutableVariant()
 		candidates := getSettingsFileCandidates(variant)
-		return fmt.Errorf("keine Settings-Datei (%s) gefunden", strings.Join(candidates, ", "))
+		return fmt.Errorf("keine Settings-Datei (%s) im Aufruf- oder Roaming-Verzeichnis gefunden", strings.Join(candidates, ", "))
 	}
 
 	data, err := os.ReadFile(targetFile)
@@ -311,19 +429,13 @@ func loadSettings() error {
 		return fmt.Errorf("Settings-Datei %s konnte nicht gelesen werden: %w", targetFile, err)
 	}
 
-	// Raw JSON Map parsen, um dynamisch mandant_1, mandant_2, mandant_n Keys zu unterstützen
+	// Raw JSON Map strikt parsen (keine Fehlertoleranz)
 	var rawData map[string]interface{}
 	if err := json.Unmarshal(data, &rawData); err != nil {
-		sanitizedData := sanitizeJSONBackslashes(data)
-		if errRetry := json.Unmarshal(sanitizedData, &rawData); errRetry == nil {
-			data = sanitizedData
-		} else {
-			return fmt.Errorf("Fehler beim Parsen von %s: %w", targetFile, err)
-		}
+		return fmt.Errorf("Fehler beim Parsen von %s: %w", targetFile, err)
 	}
 
 	var newSettings Settings
-	// Direkt unmarshals, um BasePort und ServerExec einzulesen
 	_ = json.Unmarshal(data, &newSettings)
 
 	if execVal, ok := rawData["serverExec"].(string); ok && execVal != "" {
@@ -334,19 +446,38 @@ func loadSettings() error {
 	} else if linkVal, ok := rawData["baselink"].(string); ok && linkVal != "" {
 		newSettings.BaseLink = linkVal
 	}
-	
-	// Fallback für den Port, falls er in der JSON-Datei "port" statt "basePort" heißt
+
+	if ipVal, ok := rawData["ip"].(string); ok && ipVal != "" {
+		newSettings.IP = ipVal
+	} else if ipVal, ok := rawData["ipadresse"].(string); ok && ipVal != "" {
+		newSettings.IP = ipVal
+	} else if ipVal, ok := rawData["ip_adresse"].(string); ok && ipVal != "" {
+		newSettings.IP = ipVal
+	} else if hostVal, ok := rawData["host"].(string); ok && hostVal != "" {
+		newSettings.IP = hostVal
+	}
+
 	if newSettings.BasePort == 0 {
-		if portVal, ok := rawData["port"].(float64); ok {
+		if portVal, ok := rawData["basePort"].(float64); ok {
+			newSettings.BasePort = int(portVal)
+		} else if portVal, ok := rawData["port"].(float64); ok {
 			newSettings.BasePort = int(portVal)
 		}
 	}
+	if newSettings.Port == 0 {
+		if portVal, ok := rawData["port"].(float64); ok {
+			newSettings.Port = int(portVal)
+		}
+	}
 
-	// Falls es eine fertige "mandanten" Liste im JSON gibt (z.B. aus der bisherigen Launcher-Struktur)
+	// Falls es eine fertige "mandanten" Liste im JSON gibt
 	if len(newSettings.Mandanten) > 0 {
 		for i := range newSettings.Mandanten {
 			if strings.TrimSpace(newSettings.Mandanten[i].Name) == "" {
 				newSettings.Mandanten[i].Name = fmt.Sprintf("Mandant %d", newSettings.Mandanten[i].MandantNr)
+			}
+			if newSettings.Mandanten[i].Icon == "" {
+				newSettings.Mandanten[i].Icon = "storefront"
 			}
 		}
 	} else {
@@ -411,9 +542,9 @@ func loadSettings() error {
 
 	settings = newSettings
 	loadedFile = targetFile
-	log.Printf("Settings geladen aus %s (%d Mandanten, ServerExec: '%s')", targetFile, len(settings.Mandanten), settings.ServerExec)
-	return nil
+	log.Printf("Settings geladen aus %s (%d Mandanten, ServerExec: '%s', BasePort: %d)", targetFile, len(settings.Mandanten), settings.ServerExec, settings.BasePort)
 
+	return nil
 }
 
 func isPortOpen(port int) bool {
@@ -444,6 +575,17 @@ func openBrowser(rawURL string) error {
 	return cmd.Start()
 }
 
+func dirExists(path string) bool {
+	if path == "" {
+		return false
+	}
+	info, err := os.Stat(path)
+	if err != nil {
+		return false
+	}
+	return info.IsDir()
+}
+
 func resolveServerExec(serverExec string) string {
 	execName := strings.Trim(strings.TrimSpace(serverExec), "\"'")
 	// If execName has a stray % prefix not followed by ProgramFiles, trim it
@@ -452,73 +594,41 @@ func resolveServerExec(serverExec string) string {
 	}
 	if strings.HasPrefix(strings.ToLower(execName), "%programfiles%") {
 		pf := os.Getenv("ProgramFiles")
-		execName = strings.Replace(execName, "%programfiles%", pf, 1)
-		execName = strings.Replace(execName, "%PROGRAMFILES%", pf, 1)
+		if pf != "" {
+			execName = strings.Replace(execName, "%programfiles%", pf, 1)
+			execName = strings.Replace(execName, "%PROGRAMFILES%", pf, 1)
+		}
 	}
 
-	variant := getExecutableVariant()
-
-	if !filepath.IsAbs(execName) {
-		cwd, _ := os.Getwd()
-		execDir := ""
-		if execPath, err := os.Executable(); err == nil {
-			execDir = filepath.Dir(execPath)
+	// Falls der konfigurierte Pfad bereits direkt existiert
+	if execName != "" {
+		if _, err := os.Stat(execName); err == nil {
+			if abs, errAbs := filepath.Abs(execName); errAbs == nil {
+				return abs
+			}
+			return execName
 		}
+	}
 
-		var candidates []string
-		if execName != "" {
-			candidates = append(candidates, execName, filepath.Join(cwd, execName))
-			if execDir != "" && execDir != cwd {
-				candidates = append(candidates, filepath.Join(execDir, execName))
-			}
-			candidates = append(candidates, filepath.Join("C:\\Program Files\\HuhnLite", execName))
-		}
+	cwd, _ := os.Getwd()
+	execDir := ""
+	if execPath, err := os.Executable(); err == nil {
+		execDir = filepath.Dir(execPath)
+	}
 
-		// Suffix-spezifische Server-Executables bevorzugen, falls Variante ermittelt wurde
-		if variant != "" {
-			vTitle := strings.ToUpper(variant[:1]) + strings.ToLower(variant[1:])
-			if strings.EqualFold(variant, "mariadb") {
-				vTitle = "MariaDB"
-			} else if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
-				vTitle = "Postgres"
-			}
-
-			variantNames := []string{
-				fmt.Sprintf("HuhnLite-Server-%s.exe", vTitle),
-				fmt.Sprintf("huhnlite-server-%s.exe", strings.ToLower(variant)),
-				fmt.Sprintf("HuhnLite-Server-%s", vTitle),
-				fmt.Sprintf("huhnlite-server-%s", strings.ToLower(variant)),
-			}
-			if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
-				variantNames = append(variantNames,
-					"HuhnLite-Server-PostgreSQL.exe",
-					"huhnlite-server-postgresql.exe",
-					"HuhnLite-Server-PostgreSQL",
-					"huhnlite-server-postgresql",
-				)
-			}
-
-			for _, vn := range variantNames {
-				candidates = append(candidates,
-					vn,
-					filepath.Join(cwd, vn),
-				)
-				if execDir != "" && execDir != cwd {
-					candidates = append(candidates, filepath.Join(execDir, vn))
+	// Falls execName ein relativer Name ist, zuerst direkt im Ordner der laufenden Executable und im CWD prüfen
+	if execName != "" && !filepath.IsAbs(execName) {
+		if execDir != "" {
+			cand := filepath.Join(execDir, execName)
+			if _, err := os.Stat(cand); err == nil {
+				if absCand, errAbs := filepath.Abs(cand); errAbs == nil {
+					return absCand
 				}
-				candidates = append(candidates, filepath.Join("C:\\Program Files\\HuhnLite", vn))
+				return cand
 			}
 		}
-
-		// Generische Fallbacks
-		candidates = append(candidates,
-			"HuhnLite-Server.exe",
-			filepath.Join("C:\\Program Files\\HuhnLite", "HuhnLite-Server.exe"),
-			filepath.Join("C:\\Program Files\\HuhnLite", "huhnlite-wails.exe"),
-			"huhnlite-wails.exe",
-		)
-
-		for _, cand := range candidates {
+		if cwd != "" {
+			cand := filepath.Join(cwd, execName)
 			if _, err := os.Stat(cand); err == nil {
 				if absCand, errAbs := filepath.Abs(cand); errAbs == nil {
 					return absCand
@@ -527,6 +637,153 @@ func resolveServerExec(serverExec string) string {
 			}
 		}
 	}
+
+	// Fallback für C:\Programme\... -> C:\Program Files\... auf Windows
+	if strings.HasPrefix(strings.ToLower(execName), "c:\\programme\\") {
+		pf := os.Getenv("ProgramFiles")
+		if pf == "" {
+			pf = "C:\\Program Files"
+		}
+		execNameAlt := filepath.Join(pf, execName[13:])
+		if _, err := os.Stat(execNameAlt); err == nil {
+			return execNameAlt
+		}
+	} else if strings.HasPrefix(strings.ToLower(execName), "c:\\program files\\") {
+		execNameAlt := filepath.Join("C:\\Programme", execName[17:])
+		if _, err := os.Stat(execNameAlt); err == nil {
+			return execNameAlt
+		}
+	}
+
+	// Falls absolute Pfad nicht existiert, Dateinamen für Suchkandidaten verwenden
+	baseExec := execName
+	if filepath.IsAbs(execName) {
+		baseExec = filepath.Base(execName)
+	}
+
+	settingsDir := ""
+	if loadedFile != "" {
+		settingsDir = filepath.Dir(loadedFile)
+	}
+
+	variant := getExecutableVariant()
+
+	var searchDirs []string
+	if cwd != "" {
+		searchDirs = append(searchDirs, cwd)
+	}
+	if execDir != "" && execDir != cwd {
+		searchDirs = append(searchDirs, execDir)
+	}
+	if settingsDir != "" && settingsDir != cwd && settingsDir != execDir {
+		searchDirs = append(searchDirs, settingsDir)
+	}
+
+	if variant != "" {
+		vTitle := strings.ToUpper(variant[:1]) + strings.ToLower(variant[1:])
+		if strings.EqualFold(variant, "mariadb") {
+			vTitle = "MariaDB"
+		} else if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
+			vTitle = "Postgres"
+		}
+		if pf := os.Getenv("ProgramFiles"); pf != "" {
+			searchDirs = append(searchDirs,
+				filepath.Join(pf, fmt.Sprintf("HuhnLite-%s", vTitle)),
+				filepath.Join(pf, fmt.Sprintf("HuhnLite-%s", strings.ToLower(variant))),
+			)
+		}
+		if pf86 := os.Getenv("ProgramFiles(x86)"); pf86 != "" {
+			searchDirs = append(searchDirs,
+				filepath.Join(pf86, fmt.Sprintf("HuhnLite-%s", vTitle)),
+				filepath.Join(pf86, fmt.Sprintf("HuhnLite-%s", strings.ToLower(variant))),
+			)
+		}
+		searchDirs = append(searchDirs,
+			filepath.Join("C:\\Programme", fmt.Sprintf("HuhnLite-%s", vTitle)),
+			filepath.Join("C:\\Programme", fmt.Sprintf("HuhnLite-%s", strings.ToLower(variant))),
+		)
+	}
+
+	if pf := os.Getenv("ProgramFiles"); pf != "" {
+		searchDirs = append(searchDirs, filepath.Join(pf, "HuhnLite"), pf)
+	}
+	if pf86 := os.Getenv("ProgramFiles(x86)"); pf86 != "" {
+		searchDirs = append(searchDirs, filepath.Join(pf86, "HuhnLite"), pf86)
+	}
+	searchDirs = append(searchDirs, "C:\\Programme\\HuhnLite", "C:\\Programme")
+
+	var names []string
+	if baseExec != "" {
+		names = append(names, baseExec)
+	}
+
+	if variant != "" {
+		vTitle := strings.ToUpper(variant[:1]) + strings.ToLower(variant[1:])
+		if strings.EqualFold(variant, "mariadb") {
+			vTitle = "MariaDB"
+		} else if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
+			vTitle = "Postgres"
+		}
+
+		variantNames := []string{
+			fmt.Sprintf("HuhnLite-Server-%s.exe", vTitle),
+			fmt.Sprintf("huhnlite-server-%s.exe", strings.ToLower(variant)),
+			fmt.Sprintf("HuhnLite-Server-%s", vTitle),
+			fmt.Sprintf("huhnlite-server-%s", strings.ToLower(variant)),
+		}
+		if strings.EqualFold(variant, "postgres") || strings.EqualFold(variant, "postgresql") {
+			variantNames = append(variantNames,
+				"HuhnLite-Server-PostgreSQL.exe",
+				"huhnlite-server-postgresql.exe",
+				"HuhnLite-Server-PostgreSQL",
+				"huhnlite-server-postgresql",
+			)
+		}
+		names = append(names, variantNames...)
+	}
+
+	names = append(names, "HuhnLite-Server.exe", "HuhnLite-Server", "huhnlite-wails.exe")
+
+	for _, n := range names {
+		if n == "" {
+			continue
+		}
+		if filepath.IsAbs(n) {
+			if _, err := os.Stat(n); err == nil {
+				return n
+			}
+			continue
+		}
+		for _, dir := range searchDirs {
+			if dir == "" {
+				continue
+			}
+			cand := filepath.Join(dir, n)
+			if _, err := os.Stat(cand); err == nil {
+				if absCand, errAbs := filepath.Abs(cand); errAbs == nil {
+					return absCand
+				}
+				return cand
+			}
+		}
+	}
+
+	if !filepath.IsAbs(execName) {
+		fallbackDir := cwd
+		if fallbackDir == "" || !dirExists(fallbackDir) {
+			fallbackDir = execDir
+		}
+		if fallbackDir == "" || !dirExists(fallbackDir) {
+			if loadedFile != "" {
+				fallbackDir = filepath.Dir(loadedFile)
+			}
+		}
+		if absExec, err := filepath.Abs(filepath.Join(fallbackDir, execName)); err == nil {
+			log.Printf("[HuhnLite-Select] WARNUNG: Server-Executable '%s' wurde in den Suchverzeichnissen %v nicht direkt per os.Stat gefunden. Verwende absoluten Pfad: '%s'", execName, searchDirs, absExec)
+			return absExec
+		}
+	}
+
 	return execName
 }
 
@@ -541,9 +798,7 @@ func initLogging() *os.File {
 
 	f, err := os.OpenFile(logPath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
-		if configDir, errConfig := os.UserConfigDir(); errConfig == nil {
-			appDataDir := filepath.Join(configDir, "HuhnLite")
-			_ = os.MkdirAll(appDataDir, 0755)
+		if appDataDir := getAppDataDir(); appDataDir != "" && dirExists(appDataDir) {
 			logPath = filepath.Join(appDataDir, logFileName)
 			f, err = os.OpenFile(logPath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 		}
@@ -582,6 +837,17 @@ func parsePortFromURL(rawURL string) int {
 	return 0
 }
 
+func logFatal(logFile *os.File, format string, v ...interface{}) {
+	msg := fmt.Sprintf(format, v...)
+	log.Println(msg)
+	if logFile != nil {
+		_ = logFile.Sync()
+		_ = logFile.Close()
+	}
+	time.Sleep(100 * time.Millisecond)
+	os.Exit(1)
+}
+
 func main() {
 	logFile := initLogging()
 	if logFile != nil {
@@ -599,20 +865,34 @@ func main() {
 		log.Printf("[HuhnLite-Select] Erkannte Server/DB-Variante: '%s'", variant)
 	}
 
-	// 1. Settings laden
+	// 1. Settings laden - Bei Fehler sofort abbrechen
 	if err := loadSettings(); err != nil {
-		log.Printf("Warnung beim Laden der Settings: %v\n", err)
-	} else {
-		log.Printf("[HuhnLite-Select] Geladene Datei: %s", loadedFile)
-		log.Printf("[HuhnLite-Select] Konfiguriert -> ServerExec: '%s', BaseLink: '%s', BasePort: %d, Mandanten: %d",
-			settings.ServerExec, settings.BaseLink, settings.BasePort, len(settings.Mandanten))
+		logFatal(logFile, "[HuhnLite-Select] FEHLER beim Laden der Settings: %v. Anwendung bricht ab.", err)
+	}
+	log.Printf("[HuhnLite-Select] Geladene Datei: %s", loadedFile)
+	log.Printf("[HuhnLite-Select] Konfiguriert -> ServerExec: '%s', BaseLink: '%s', BasePort: %d, Mandanten: %d",
+		settings.ServerExec, settings.BaseLink, settings.BasePort, len(settings.Mandanten))
+
+	// Szenario 1: Reiner Remote-Modus (IP/Port oder BaseLink ohne lokale ServerExec / Mandanten)
+	if isRemoteMode() {
+		targetURL := getRemoteTargetURL()
+		log.Printf("[HuhnLite-Select] Szenario 1 (Remote-Modus aus %s). Öffne Standardbrowser: %s und beende Anwendung.\n", loadedFile, targetURL)
+		if err := openBrowser(targetURL); err != nil {
+			log.Printf("[HuhnLite-Select] Fehler beim Öffnen des Browsers: %v\n", err)
+		}
+		time.Sleep(500 * time.Millisecond)
+		return
 	}
 
-	port := 8080
-	if settings.BasePort > 0 {
-		port = settings.BasePort
+	// Szenario 2 & 3: Lokaler Mandanten-Auswahl Modus
+	if settings.BasePort <= 0 {
+		logFatal(logFile, "[HuhnLite-Select] FEHLER: Ungültiger oder fehlender 'basePort' in %s. Anwendung bricht ab.", loadedFile)
+	}
+	if strings.TrimSpace(settings.ServerExec) == "" {
+		logFatal(logFile, "[HuhnLite-Select] FEHLER: Fehlendes 'serverExec' in %s für den Server-Start. Anwendung bricht ab.", loadedFile)
 	}
 
+	port := settings.BasePort
 	targetURL := settings.BaseLink
 	if strings.TrimSpace(targetURL) == "" {
 		targetURL = fmt.Sprintf("http://localhost:%d", port)
@@ -623,18 +903,7 @@ func main() {
 		port = urlPort
 	}
 
-	// 2. Falls eine Select-Settings-Datei geladen wurde (z.B. settings_select.json / Settings_select.json):
-	// Nur den Standardbrowser mit BaseLink öffnen und das Programm sofort beenden.
-	if isSelectSettingsFile(loadedFile) {
-		log.Printf("[HuhnLite-Select] Settings-Select Modus (%s). Öffne Standardbrowser: %s und beende Launcher.\n", loadedFile, targetURL)
-		if err := openBrowser(targetURL); err != nil {
-			log.Printf("[HuhnLite-Select] Fehler beim Öffnen des Browsers: %v\n", err)
-		}
-		time.Sleep(500 * time.Millisecond)
-		return
-	}
-
-	// 3. Falls bereits eine Instanz auf dem Port läuft: Browser öffnen und beenden
+	// Falls bereits eine Instanz auf dem Port läuft: Browser öffnen und beenden
 	if isPortOpen(port) {
 		log.Printf("[HuhnLite-Select] Port %d bereits aktiv. Öffne Browser: %s\n", port, targetURL)
 		if err := openBrowser(targetURL); err != nil {
@@ -644,7 +913,7 @@ func main() {
 		return
 	}
 
-	// 4. HTTP Server Router (Mandanten-Auswähler UI)
+	// HTTP Server Router (Mandanten-Auswähler UI)
 	mux := http.NewServeMux()
 
 	// API Endpunkte
@@ -656,7 +925,7 @@ func main() {
 	// Embedded Static Frontend
 	frontendSub, err := fs.Sub(frontendFS, "frontend")
 	if err != nil {
-		log.Fatalf("Fehler beim Laden des embedded Frontends: %v", err)
+		logFatal(logFile, "Fehler beim Laden des embedded Frontends: %v", err)
 	}
 	
 	fileServer := http.FileServer(http.FS(frontendSub))
@@ -679,7 +948,7 @@ func main() {
 	addr := fmt.Sprintf(":%d", port)
 	log.Printf("[HuhnLite-Select] Launcher läuft unter %s\n", targetURL)
 	if err := http.ListenAndServe(addr, mux); err != nil {
-		log.Fatalf("Server-Fehler: %v", err)
+		logFatal(logFile, "Server-Fehler: %v", err)
 	}
 }
 
@@ -696,7 +965,7 @@ func handleGetMandanten(w http.ResponseWriter, r *http.Request) {
 		basePort = settings.BasePort
 	}
 
-	// Port Status prüfen für jeden Mandanten (808n)
+	// Port Status prüfen für jeden Mandanten (BasePort + MandantNr)
 	for i := range mandantenCopy {
 		if mandantenCopy[i].Port == 0 && mandantenCopy[i].MandantNr > 0 {
 			mandantenCopy[i].Port = basePort + mandantenCopy[i].MandantNr
@@ -764,6 +1033,16 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 	}
 
 	execName := resolveServerExec(serverExec)
+	if strings.TrimSpace(execName) == "" {
+		log.Printf("[HuhnLite-Select] FEHLER: Server-Executable '%s' konnte nicht aufgelöst werden.\n", serverExec)
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"success": false,
+			"message": fmt.Sprintf("Server-Executable '%s' nicht gefunden", serverExec),
+		})
+		return
+	}
 
 	lang := r.URL.Query().Get("lng")
 	if lang == "" {
@@ -776,24 +1055,46 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 		lang = "de"
 	}
 
-	cmd := exec.Command(execName,
+	darkmode := r.URL.Query().Get("darkmode")
+	if darkmode == "" {
+		darkmode = r.URL.Query().Get("dark")
+	}
+	if darkmode == "" {
+		darkmode = "false"
+	}
+
+	// AUSSCHLIESSLICH: BasePort + MandantNr als Port, Darkmode, Sprachkennzeichen. Weiter Nichts!
+	args := []string{
 		"-port", strconv.Itoa(port),
-		"-mandant", strconv.Itoa(targetMandant.MandantNr),
-		"-launcher-port", strconv.Itoa(basePort),
+		"-darkmode", darkmode,
 		"-language", lang,
 		"-lng", lang,
-	)
-	if filepath.IsAbs(execName) {
-		cmd.Dir = filepath.Dir(execName)
-	} else {
-		cwd, _ := os.Getwd()
-		cmd.Dir = cwd
 	}
+
+	cmd := exec.Command(execName, args...)
+
+	execDir := ""
+	if loadedFile != "" {
+		execDir = filepath.Dir(loadedFile)
+	}
+	if execDir == "" || !dirExists(execDir) {
+		if filepath.IsAbs(execName) {
+			execDir = filepath.Dir(execName)
+		}
+	}
+	if execDir == "" || !dirExists(execDir) {
+		execDir, _ = os.Getwd()
+	}
+	cmd.Dir = execDir
+
+	var outputBuf bytes.Buffer
+	cmd.Stdout = &outputBuf
+	cmd.Stderr = &outputBuf
 
 	log.Printf("[HuhnLite-Select] Starte Mandant %d (%s) auf Port %d mit Befehl: %s (Dir: %s)\n", targetMandant.MandantNr, targetMandant.Name, port, cmd.String(), cmd.Dir)
 
 	if err := cmd.Start(); err != nil {
-		log.Printf("Fehler beim Ausführen von cmd.Start(): %v\n", err)
+		log.Printf("[HuhnLite-Select] Fehler beim Ausführen von cmd.Start(): %v\n", err)
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusInternalServerError)
 		json.NewEncoder(w).Encode(map[string]interface{}{
@@ -810,6 +1111,15 @@ func handleStartMandant(w http.ResponseWriter, r *http.Request) {
 		if isPortOpen(port) {
 			started = true
 			break
+		}
+	}
+
+	if !started {
+		output := strings.TrimSpace(outputBuf.String())
+		if output != "" {
+			log.Printf("[HuhnLite-Select] WARNUNG: Mandant %d (Port %d) ist nach 5s nicht erreichbar. Server-Konsolenausgabe:\n%s\n", targetMandant.MandantNr, port, output)
+		} else {
+			log.Printf("[HuhnLite-Select] WARNUNG: Mandant %d (Port %d) ist nach 5s nicht erreichbar (keine Server-Konsolenausgabe).\n", targetMandant.MandantNr, port)
 		}
 	}
 

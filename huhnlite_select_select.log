@@ -1,0 +1,11 @@
+2026/08/21 11:41:47 ==================================================
+2026/08/21 11:41:47 [HuhnLite-Select] Log gestartet um 2026-08-21 11:41:47
+2026/08/21 11:41:47 [HuhnLite-Select] Log-Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite_select_select.log
+2026/08/21 11:41:47 [HuhnLite-Select] Launcher wird gestartet...
+2026/08/21 11:41:47 [HuhnLite-Select] CWD: 'C:\Users\hofma\GolandProjects\HuhnLite-Select'
+2026/08/21 11:41:47 [HuhnLite-Select] Executable: 'C:\Users\hofma\GolandProjects\HuhnLite-Select\huhnlite-select.exe'
+2026/08/21 11:41:47 [HuhnLite-Select] Erkannte Server/DB-Variante: 'select'
+2026/08/21 11:41:47 Settings geladen aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json (0 Mandanten, ServerExec: '', BasePort: 0)
+2026/08/21 11:41:47 [HuhnLite-Select] Geladene Datei: C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json
+2026/08/21 11:41:47 [HuhnLite-Select] Konfiguriert -> ServerExec: '', BaseLink: 'http://192.168.178.100:9000', BasePort: 0, Mandanten: 0
+2026/08/21 11:41:47 [HuhnLite-Select] Szenario 1 (Remote-Modus aus C:\Users\hofma\GolandProjects\HuhnLite-Select\settings_select.json). Öffne Standardbrowser: http://192.168.178.100:9000 und beende Anwendung.
